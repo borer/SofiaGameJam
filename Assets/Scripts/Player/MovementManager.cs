@@ -10,15 +10,16 @@ public class MovementManager : MonoBehaviour {
 	public float fuckerSpeed = -3f;
 	public float rotationSpeed = 20f;
 	public float randomTilt = 0.5f;
-	public float maxAngleRotation = 20f;
+	public float maxRotationDiference = 20f;
 	public float screenWidth = .1f;
 
+	public Transform model;
 	public Transform rotationPoint;
 	public Transform fuckerParticlePrefab;
 	public Transform boosterParticlePrefab;
 
-	private float MinAngleRotation; 
-	private float MaxAngleRotation;
+	private float minAngleRotation; 
+	private float maxAngleRotation;
 	private bool drunkCoroutineStarted = false;
 	private float drunkRotation;
 	
@@ -26,12 +27,15 @@ public class MovementManager : MonoBehaviour {
 	private float movementDirection;
 	private float movementSpeed;
     public float Speed { get { return movementSpeed; } }
+
+	private Animator animationController;
 	private CameraAnimationController cameraAnimController;
 
 	void Start() {
 		cameraAnimController = Camera.main.GetComponent<CameraAnimationController> ();
-		MinAngleRotation = maxAngleRotation; 
-		MaxAngleRotation = 360f - maxAngleRotation;
+		animationController = model.gameObject.GetComponent<Animator> ();
+		minAngleRotation = maxRotationDiference; 
+		maxAngleRotation = 360f - maxRotationDiference;
 		movementSpeed = startSpeed;
 	}
 
@@ -39,15 +43,17 @@ public class MovementManager : MonoBehaviour {
 		if (other.CompareTag ("Booster")) {
 			movementSpeed += boosterSpeed;
 			cameraAnimController.playerCollectedBooster();
+			animationController.SetBool ("BoosterHit", true);
 			GameObject instance = CFX_SpawnSystem.GetNextObject(boosterParticlePrefab.gameObject);
 			instance.transform.position = transform.position;
 		}
 
 		if (other.CompareTag ("Fucker")) {
 			movementSpeed += fuckerSpeed;
+			animationController.SetBool ("FuckerHit", true);
 			GameObject instance = CFX_SpawnSystem.GetNextObject(fuckerParticlePrefab.gameObject);
 			instance.transform.position = transform.position;
-		}
+		} 
 
 		Destroy(other.gameObject);
 	}
@@ -61,13 +67,15 @@ public class MovementManager : MonoBehaviour {
 		startRandomDrunkness ();
 
 		float currentRotationAngle = transform.rotation.eulerAngles.z;
-		if (currentRotationAngle < MinAngleRotation ||
-		    currentRotationAngle > MaxAngleRotation ||
-		    currentRotationAngle < MaxAngleRotation-10 && rotationOffset > 0 ||
-		    currentRotationAngle > MinAngleRotation+10 && rotationOffset < 0) 
+		if (currentRotationAngle < minAngleRotation ||
+		    currentRotationAngle > maxAngleRotation ||
+		    (currentRotationAngle > maxAngleRotation-10 && rotationOffset > 0) ||
+		    (currentRotationAngle < minAngleRotation+10 && rotationOffset < 0)) 
 		{
+
             if (moving)
             {
+				Debug.Log(currentRotationAngle);
 				Quaternion UProtation = Quaternion.LookRotation(Vector3.forward);
 				transform.rotation = Quaternion.Slerp(transform.rotation, UProtation, movementDirection * rotationOffset);
 			} else {
@@ -75,14 +83,19 @@ public class MovementManager : MonoBehaviour {
 			}
 		}
 
+		animationController.SetBool ("FuckerHit", false);
+		animationController.SetBool ("BoosterHit", false);
+		animationController.SetBool ("PlayerInput", moving);
+		animationController.SetFloat ("drunkRotation", rotationOffset);
+
 		float movementBonus = Mathf.Sign (horizontalOffset) * Mathf.Abs(verticalOffset);
 		horizontalOffset = moving ? horizontalOffset + movementBonus : horizontalOffset;
-		transform.Translate (horizontalOffset, verticalOffset, 0);
+		transform.Translate (new Vector3 (horizontalOffset, verticalOffset, 0), Space.World);
 	}
 
 	private void getInput() {
         float speed = Input.GetAxis("Horizontal");
-        moving = Mathf.Abs(Input.GetAxis("Horizontal")) > 0;
+		moving = Mathf.Abs(speed) > 0;
         movementDirection  = speed;
 	}
 
@@ -96,7 +109,6 @@ public class MovementManager : MonoBehaviour {
 	public IEnumerator drunknessRotation () {
 		drunkCoroutineStarted = true;
         drunkRotation = Random.Range(-randomTilt, randomTilt);
-		
         for (int i=0; i < 10; i++) {
 			yield return new WaitForSeconds (1f);
             drunkRotation +=  Mathf.Sign(drunkRotation) * 1.5f;
