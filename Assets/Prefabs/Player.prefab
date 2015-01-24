@@ -26,9 +26,24 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 407836}
-  - 114: {fileID: 11407836}
+  - 114: {fileID: 11448490}
   m_Layer: 0
   m_Name: Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &148490
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 448490}
+  m_Layer: 0
+  m_Name: RotationPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,7 +57,7 @@ Transform:
   m_GameObject: {fileID: 107834}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 407836}
   m_RootOrder: 0
@@ -57,8 +72,21 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 407834}
+  - {fileID: 448490}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!4 &448490
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148490}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 407836}
+  m_RootOrder: 1
 --- !u!23 &2307836
 Renderer:
   m_ObjectHideFlags: 1
@@ -98,7 +126,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &11407836
+--- !u!114 &11448490
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -106,12 +134,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 107836}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2903ba721f6f8b428d567356921a7ec, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e847249afee50c46bae946954ca2b5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   normalSpeed: 3
   slowSpeed: 1.5
   fastSpeed: 5
+  rotationSpeed: 10
+  rotationPoint: {fileID: 448490}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
