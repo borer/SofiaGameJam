@@ -12,7 +12,7 @@ public class BackgoundLayer : MonoBehaviour {
     public float[] m_heights;
     private int m_heightIndex = 0;
     private float m_offset = 0;
-
+    private float m_maxDistance = 0;
 	void Start () 
     {
         var go = (GameObject)Instantiate(m_prefab, transform.position, Quaternion.identity);
@@ -28,6 +28,9 @@ public class BackgoundLayer : MonoBehaviour {
 
         m_offset = (maxY - minY) * go.transform.localScale.y;
         m_planes.Add(go);
+
+        m_maxDistance = GameObject.FindGameObjectWithTag("Asteroid").transform.position.y;
+        Debug.Log(m_maxDistance);
 	}
 	
 	// Update is called once per frame
@@ -42,7 +45,7 @@ public class BackgoundLayer : MonoBehaviour {
             Vector3 offset = new Vector3(0, m_offset, 0);
 
             var go = (GameObject)Instantiate(m_prefab, last.transform.position + offset, Quaternion.identity);
-            if (m_heightIndex < m_heights.Length && go.transform.position.y > m_heights[m_heightIndex])
+            if (m_heightIndex < m_heights.Length && go.transform.position.y > m_heights[m_heightIndex] * m_maxDistance)
                 go.renderer.material = m_transitions[m_heightIndex++];  
             else
                 go.renderer.material = m_skyColours[m_heightIndex];

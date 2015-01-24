@@ -17,14 +17,16 @@ public class BackgroundObjectGen : MonoBehaviour {
 
     public float m_verticalSpeedFactor = 0;
     private float m_verticalSpeed = 0;
+    private float m_maxDistance = 0;
     void Start () 
     {
-        m_distance = m_startInterval;
+        m_distance = 0;
+        m_maxDistance = GameObject.FindGameObjectWithTag("Asteroid").transform.position.y;
 	}
 
     protected virtual bool Generate()
     {
-        float pos = Camera.main.transform.position.y;
+        float pos = Camera.main.transform.position.y / m_maxDistance;
         if (pos < m_begin || pos > m_end)
             return false;
         m_distance -= Camera.main.GetComponent<CameraFollow>().DeltaPos.y + m_verticalSpeed * Time.deltaTime;

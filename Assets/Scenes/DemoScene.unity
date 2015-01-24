@@ -403,7 +403,7 @@ MonoBehaviour:
   - {fileID: 149906, guid: 469859cf46bac9643aa498601ceed595, type: 2}
   - {fileID: 132208, guid: 9352965807bf1d0448dc902a9e689f2c, type: 2}
   m_begin: 0
-  m_end: 1000
+  m_end: 1.20000005
   m_interval: 10
   m_verticalSpeedFactor: .899999976
 --- !u!4 &253411359
@@ -437,7 +437,7 @@ MonoBehaviour:
   m_prefabs:
   - {fileID: 122974, guid: 31201cc2c174cb7468a4fae093c8ffdd, type: 2}
   m_begin: 0
-  m_end: 1000
+  m_end: 1.20000005
   m_interval: 10
   m_verticalSpeedFactor: .899999976
 --- !u!1001 &278763896
@@ -879,7 +879,7 @@ GameObject:
   - 4: {fileID: 1485503800}
   m_Layer: 0
   m_Name: Asteroid
-  m_TagString: Untagged
+  m_TagString: Asteroid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1018,8 +1018,8 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 285a11c5031c8f84b996606d6c14e530, type: 2}
   - {fileID: 2100000, guid: a6bcb6d2d6d89c14b8be9e7f36cf8fb0, type: 2}
   m_heights:
-  - 400
-  - 800
+  - .400000006
+  - .800000012
 --- !u!4 &1868296244
 Transform:
   m_ObjectHideFlags: 0
@@ -1052,7 +1052,7 @@ MonoBehaviour:
   - {fileID: 120524, guid: 95c9a7a4a02087f4b915d697045bb582, type: 2}
   - {fileID: 184840, guid: 3f38824df94c542489419097a01cba8d, type: 2}
   m_begin: 0
-  m_end: 600
+  m_end: .600000024
   m_interval: 10
   m_verticalSpeedFactor: 0
 --- !u!114 &1868296246
@@ -1073,8 +1073,8 @@ MonoBehaviour:
   m_endInterval: .100000001
   m_prefabs:
   - {fileID: 150982, guid: 63db5aa319be6074788508be6adb068b, type: 2}
-  m_begin: 400
-  m_end: 1000
+  m_begin: .400000006
+  m_end: 1.20000005
   m_interval: 10
   m_verticalSpeedFactor: 0
 --- !u!1 &1966006569
