@@ -9,7 +9,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 407834}
   - 33: {fileID: 3307836}
-  - 65: {fileID: 6507836}
   - 23: {fileID: 2307836}
   m_Layer: 0
   m_Name: Model
@@ -27,6 +26,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 407836}
   - 114: {fileID: 11448490}
+  - 54: {fileID: 5411420}
+  - 65: {fileID: 6511420}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -68,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 107836}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.239999995, y: .540000021, z: -5.57000017}
+  m_LocalPosition: {x: -.239999995, y: .540000021, z: -5.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 407834}
@@ -82,7 +83,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 148490}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 407836}
@@ -114,17 +115,32 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 107834}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &6507836
+--- !u!54 &5411420
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 107836}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &6511420
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 107834}
+  m_GameObject: {fileID: 107836}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 2, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &11448490
 MonoBehaviour:
@@ -137,10 +153,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e847249afee50c46bae946954ca2b5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalSpeed: 3
-  slowSpeed: 1.5
-  fastSpeed: 5
+  startSpeed: 3
+  minSoberSpeed: 2
+  maxFullyDrunkSpeed: 10
+  slowingFactor: .5
+  boosterSpeed: 5
+  fuckerSpeed: -3
   rotationSpeed: 10
+  randomTilt: .100000001
+  maxAngleRotation: 20
+  screenWidth: 20
   rotationPoint: {fileID: 448490}
 --- !u!1001 &100100000
 Prefab:
