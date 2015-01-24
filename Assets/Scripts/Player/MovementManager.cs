@@ -14,21 +14,22 @@ public class MovementManager : MonoBehaviour {
 	public float screenWidth = .1f;
 
 	public Transform rotationPoint;
+	public Transform fuckerParticlePrefab;
+	public Transform boosterParticlePrefab;
 
 	private float MinAngleRotation; 
 	private float MaxAngleRotation;
 	private bool drunkCoroutineStarted = false;
 	private float drunkRotation;
-
-	private bool leftButtonPressed = false;
-	private bool rightButtonPressed = false;
+	
     private bool moving = false;
 	private float movementDirection;
 	private float movementSpeed;
     public float Speed { get { return movementSpeed; } }
 	private CameraAnimationController cameraAnimController;
-		void Start() {
-		//cameraAnimController = Camera.main.GetComponent<CameraAnimationController> ();
+
+	void Start() {
+		cameraAnimController = Camera.main.GetComponent<CameraAnimationController> ();
 		MinAngleRotation = maxAngleRotation; 
 		MaxAngleRotation = 360f - maxAngleRotation;
 		movementSpeed = startSpeed;
@@ -37,11 +38,15 @@ public class MovementManager : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 		if (other.CompareTag ("Booster")) {
 			movementSpeed += boosterSpeed;
-			//cameraAnimController.playerCollectedBooster();
+			cameraAnimController.playerCollectedBooster();
+			GameObject instance = CFX_SpawnSystem.GetNextObject(boosterParticlePrefab.gameObject);
+			instance.transform.position = transform.position;
 		}
 
 		if (other.CompareTag ("Fucker")) {
 			movementSpeed += fuckerSpeed;
+			GameObject instance = CFX_SpawnSystem.GetNextObject(fuckerParticlePrefab.gameObject);
+			instance.transform.position = transform.position;
 		}
 
 		Destroy(other.gameObject);
@@ -69,12 +74,13 @@ public class MovementManager : MonoBehaviour {
 				transform.RotateAround (rotationPoint.position, Vector3.forward, rotationOffset );
 			}
 		}
+
+		float movementBonus = Mathf.Sign (horizontalOffset) * Mathf.Abs(verticalOffset);
+		horizontalOffset = moving ? horizontalOffset + movementBonus : horizontalOffset;
 		transform.Translate (horizontalOffset, verticalOffset, 0);
 	}
 
 	private void getInput() {
-
-
         float speed = Input.GetAxis("Horizontal");
         moving = Mathf.Abs(Input.GetAxis("Horizontal")) > 0;
         movementDirection  = speed;
@@ -110,16 +116,14 @@ public class MovementManager : MonoBehaviour {
 	}
 
 	private float getHorizontalMovement() {
-		
         float offset = movementDirection * Time.deltaTime;
 		offset += transform.position.x;
         float actualOffset = Mathf.Clamp(offset, -screenWidth / 2 + Camera.main.transform.position.x, 
-                                                            screenWidth / 2 + Camera.main.transform.position.x);
+                                                   screenWidth / 2 + Camera.main.transform.position.x);
 		return actualOffset - transform.position.x;
 	}
 
 	private float getVericalMovement() {
-	
         movementSpeed -= slowingFactor * Time.smoothDeltaTime;
 		movementSpeed = Mathf.Clamp (movementSpeed, minSoberSpeed, maxFullyDrunkSpeed);
 		return movementSpeed * Time.smoothDeltaTime;
@@ -127,7 +131,6 @@ public class MovementManager : MonoBehaviour {
     }
 
 	void OnGUI() {
-		
         GUI.Label(new Rect( 450,5, 30,30),"" + movementSpeed);
 	}
 }

@@ -10,6 +10,6 @@ public class BottleRotate : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.rotation *= Quaternion.AngleAxis(m_speed * Time.smoothDeltaTime, Vector3.right);
+        transform.localRotation *= Quaternion.AngleAxis(m_speed * Time.smoothDeltaTime, Vector3.right);
 	}
 }

@@ -1,0 +1,882 @@
+fileFormatVersion: 2
+guid: f6e037f72544942cab81e32db4b5e01d
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Cloth_1
+    100002: Cloth_2
+    100004: Cloth_3
+    100006: Cloth_4
+    100008: Cloth_5
+    100010: group1
+    100012: Gusha
+    100014: Gusha_1_Ctrl
+    100016: Head
+    100018: Head_Ctrl
+    100020: Hips
+    100022: joint1
+    100024: L_Ankle
+    100026: L_Foot_Ctrl
+    100028: L_Knee
+    100030: L_Knee_Ctrl
+    100032: L_Leg
+    100034: L_Leg_Ctrl
+    100036: L_Toe
+    100038: L_Wing
+    100040: L_Wing_2
+    100042: L_Wing_Ctrl
+    100044: //RootNode
+    100046: polySurface16
+    100048: polySurface23
+    100050: polySurface24
+    100052: polySurface4
+    100054: R_Ankle
+    100056: R_Foot_Ctrl
+    100058: R_Knee
+    100060: R_Knee_Ctrl
+    100062: R_Leg
+    100064: R_Leg_Ctrl
+    100066: R_Toe
+    100068: R_Wing
+    100070: R_Wing_2
+    100072: R_Wing_Ctrl
+    100074: Robe_1_Ctrl
+    100076: Robe_2_Ctrl
+    100078: Robe_3_Ctrl
+    100080: ROOT
+    100082: Root
+    100084: Tail_1
+    100086: Tail_1_Ctrl
+    100088: Tail_2
+    100090: Tail_2_Ctrl
+    100092: Tail_3
+    400000: Cloth_1
+    400002: Cloth_2
+    400004: Cloth_3
+    400006: Cloth_4
+    400008: Cloth_5
+    400010: group1
+    400012: Gusha
+    400014: Gusha_1_Ctrl
+    400016: Head
+    400018: Head_Ctrl
+    400020: Hips
+    400022: joint1
+    400024: L_Ankle
+    400026: L_Foot_Ctrl
+    400028: L_Knee
+    400030: L_Knee_Ctrl
+    400032: L_Leg
+    400034: L_Leg_Ctrl
+    400036: L_Toe
+    400038: L_Wing
+    400040: L_Wing_2
+    400042: L_Wing_Ctrl
+    400044: //RootNode
+    400046: polySurface16
+    400048: polySurface23
+    400050: polySurface24
+    400052: polySurface4
+    400054: R_Ankle
+    400056: R_Foot_Ctrl
+    400058: R_Knee
+    400060: R_Knee_Ctrl
+    400062: R_Leg
+    400064: R_Leg_Ctrl
+    400066: R_Toe
+    400068: R_Wing
+    400070: R_Wing_2
+    400072: R_Wing_Ctrl
+    400074: Robe_1_Ctrl
+    400076: Robe_2_Ctrl
+    400078: Robe_3_Ctrl
+    400080: ROOT
+    400082: Root
+    400084: Tail_1
+    400086: Tail_1_Ctrl
+    400088: Tail_2
+    400090: Tail_2_Ctrl
+    400092: Tail_3
+    4300000: polySurface24
+    7400000: Idle
+    7400002: TurnLeft
+    7400004: TurnRight
+    7400006: Boost
+    7400008: Hit
+    7400010: Take 001
+    9500000: //RootNode
+    13700000: polySurface24
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 31
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: group1
+        weight: 1
+      - path: polySurface4
+        weight: 1
+      - path: polySurface4/polySurface16
+        weight: 1
+      - path: polySurface4/polySurface23
+        weight: 1
+      - path: polySurface24
+        weight: 1
+      - path: Root
+        weight: 1
+      - path: Root/Cloth_1
+        weight: 1
+      - path: Root/Cloth_1/Cloth_2
+        weight: 1
+      - path: Root/Cloth_1/Cloth_2/Cloth_3
+        weight: 1
+      - path: Root/Cloth_1/Cloth_2/Cloth_3/Cloth_4
+        weight: 1
+      - path: Root/Cloth_1/Cloth_2/Cloth_3/Cloth_4/Cloth_5
+        weight: 1
+      - path: Root/Gusha
+        weight: 1
+      - path: Root/Gusha/Head
+        weight: 1
+      - path: Root/Gusha/Head/joint1
+        weight: 1
+      - path: Root/Hips
+        weight: 1
+      - path: Root/Hips/L_Leg
+        weight: 1
+      - path: Root/Hips/L_Leg/L_Knee
+        weight: 1
+      - path: Root/Hips/L_Leg/L_Knee/L_Ankle
+        weight: 1
+      - path: Root/Hips/L_Leg/L_Knee/L_Ankle/L_Toe
+        weight: 1
+      - path: Root/Hips/R_Leg
+        weight: 1
+      - path: Root/Hips/R_Leg/R_Knee
+        weight: 1
+      - path: Root/Hips/R_Leg/R_Knee/R_Ankle
+        weight: 1
+      - path: Root/Hips/R_Leg/R_Knee/R_Ankle/R_Toe
+        weight: 1
+      - path: Root/Hips/Tail_1
+        weight: 1
+      - path: Root/Hips/Tail_1/Tail_2
+        weight: 1
+      - path: Root/Hips/Tail_1/Tail_2/Tail_3
+        weight: 1
+      - path: Root/L_Wing
+        weight: 1
+      - path: Root/L_Wing/L_Wing_2
+        weight: 1
+      - path: Root/R_Wing
+        weight: 1
+      - path: Root/R_Wing/R_Wing_2
+        weight: 1
+      - path: ROOT
+        weight: 1
+      - path: ROOT/Gusha_1_Ctrl
+        weight: 1
+      - path: ROOT/Gusha_1_Ctrl/Head_Ctrl
+        weight: 1
+      - path: ROOT/L_Leg_Ctrl
+        weight: 1
+      - path: ROOT/L_Leg_Ctrl/L_Knee_Ctrl
+        weight: 1
+      - path: ROOT/L_Leg_Ctrl/L_Knee_Ctrl/L_Foot_Ctrl
+        weight: 1
+      - path: ROOT/L_Wing_Ctrl
+        weight: 1
+      - path: ROOT/R_Leg_Ctrl
+        weight: 1
+      - path: ROOT/R_Leg_Ctrl/R_Knee_Ctrl
+        weight: 1
+      - path: ROOT/R_Leg_Ctrl/R_Knee_Ctrl/R_Foot_Ctrl
+        weight: 1
+      - path: ROOT/R_Wing_Ctrl
+        weight: 1
+      - path: ROOT/Robe_1_Ctrl
+        weight: 1
+      - path: ROOT/Robe_1_Ctrl/Robe_2_Ctrl
+        weight: 1
+      - path: ROOT/Robe_1_Ctrl/Robe_2_Ctrl/Robe_3_Ctrl
+        weight: 1
+      - path: ROOT/Tail_1_Ctrl
+        weight: 1
+      - path: ROOT/Tail_1_Ctrl/Tail_2_Ctrl
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: TurnLeft
+      takeName: Take 001
+      firstFrame: 31
+      lastFrame: 45
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: group1
+        weight: 1
+      - path: polySurface4
+        weight: 1
+      - path: polySurface4/polySurface16
+        weight: 1
+      - path: polySurface4/polySurface23
+        weight: 1
+      - path: polySurface24
+        weight: 1
+      - path: Root
+        weight: 1
+      - path: Root/Cloth_1
+        weight: 1
+      - path: Root/Cloth_1/Cloth_2
+        weight: 1
+      - path: Root/Cloth_1/Cloth_2/Cloth_3
+        weight: 1
+      - path: Root/Cloth_1/Cloth_2/Cloth_3/Cloth_4
+        weight: 1
+      - path: Root/Cloth_1/Cloth_2/Cloth_3/Cloth_4/Cloth_5
+        weight: 1
+      - path: Root/Gusha
+        weight: 1
+      - path: Root/Gusha/Head
+        weight: 1
+      - path: Root/Gusha/Head/joint1
+        weight: 1
+      - path: Root/Hips
+        weight: 1
+      - path: Root/Hips/L_Leg
+        weight: 1
+      - path: Root/Hips/L_Leg/L_Knee
+        weight: 1
+      - path: Root/Hips/L_Leg/L_Knee/L_Ankle
+        weight: 1
+      - path: Root/Hips/L_Leg/L_Knee/L_Ankle/L_Toe
+        weight: 1
+      - path: Root/Hips/R_Leg
+        weight: 1
+      - path: Root/Hips/R_Leg/R_Knee
+        weight: 1
+      - path: Root/Hips/R_Leg/R_Knee/R_Ankle
+        weight: 1
+      - path: Root/Hips/R_Leg/R_Knee/R_Ankle/R_Toe
+        weight: 1
+      - path: Root/Hips/Tail_1
+        weight: 1
+      - path: Root/Hips/Tail_1/Tail_2
+        weight: 1
+      - path: Root/Hips/Tail_1/Tail_2/Tail_3
+        weight: 1
+      - path: Root/L_Wing
+        weight: 1
+      - path: Root/L_Wing/L_Wing_2
+        weight: 1
+      - path: Root/R_Wing
+        weight: 1
+      - path: Root/R_Wing/R_Wing_2
+        weight: 1
+      - path: ROOT
+        weight: 1
+      - path: ROOT/Gusha_1_Ctrl
+        weight: 1
+      - path: ROOT/Gusha_1_Ctrl/Head_Ctrl
+        weight: 1
+      - path: ROOT/L_Leg_Ctrl
+        weight: 1
+      - path: ROOT/L_Leg_Ctrl/L_Knee_Ctrl
+        weight: 1
+      - path: ROOT/L_Leg_Ctrl/L_Knee_Ctrl/L_Foot_Ctrl
+        weight: 1
+      - path: ROOT/L_Wing_Ctrl
+        weight: 1
+      - path: ROOT/R_Leg_Ctrl
+        weight: 1
+      - path: ROOT/R_Leg_Ctrl/R_Knee_Ctrl
+        weight: 1
+      - path: ROOT/R_Leg_Ctrl/R_Knee_Ctrl/R_Foot_Ctrl
+        weight: 1
+      - path: ROOT/R_Wing_Ctrl
+        weight: 1
+      - path: ROOT/Robe_1_Ctrl
+        weight: 1
+      - path: ROOT/Robe_1_Ctrl/Robe_2_Ctrl
+        weight: 1
+      - path: ROOT/Robe_1_Ctrl/Robe_2_Ctrl/Robe_3_Ctrl
+        weight: 1
+      - path: ROOT/Tail_1_Ctrl
+        weight: 1
+      - path: ROOT/Tail_1_Ctrl/Tail_2_Ctrl
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: TurnRight
+      takeName: Take 001
+      firstFrame: 46
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: group1
+        weight: 1
+      - path: polySurface4
+        weight: 1
+      - path: polySurface4/polySurface16
+        weight: 1
+      - path: polySurface4/polySurface23
+        weight: 1
+      - path: polySurface24
+        weight: 1
+      - path: Root
+        weight: 1
+      - path: Root/Cloth_1
+        weight: 1
+      - path: Root/Cloth_1/Cloth_2
+        weight: 1
+      - path: Root/Cloth_1/Cloth_2/Cloth_3
+        weight: 1
+      - path: Root/Cloth_1/Cloth_2/Cloth_3/Cloth_4
+        weight: 1
+      - path: Root/Cloth_1/Cloth_2/Cloth_3/Cloth_4/Cloth_5
+        weight: 1
+      - path: Root/Gusha
+        weight: 1
+      - path: Root/Gusha/Head
+        weight: 1
+      - path: Root/Gusha/Head/joint1
+        weight: 1
+      - path: Root/Hips
+        weight: 1
+      - path: Root/Hips/L_Leg
+        weight: 1
+      - path: Root/Hips/L_Leg/L_Knee
+        weight: 1
+      - path: Root/Hips/L_Leg/L_Knee/L_Ankle
+        weight: 1
+      - path: Root/Hips/L_Leg/L_Knee/L_Ankle/L_Toe
+        weight: 1
+      - path: Root/Hips/R_Leg
+        weight: 1
+      - path: Root/Hips/R_Leg/R_Knee
+        weight: 1
+      - path: Root/Hips/R_Leg/R_Knee/R_Ankle
+        weight: 1
+      - path: Root/Hips/R_Leg/R_Knee/R_Ankle/R_Toe
+        weight: 1
+      - path: Root/Hips/Tail_1
+        weight: 1
+      - path: Root/Hips/Tail_1/Tail_2
+        weight: 1
+      - path: Root/Hips/Tail_1/Tail_2/Tail_3
+        weight: 1
+      - path: Root/L_Wing
+        weight: 1
+      - path: Root/L_Wing/L_Wing_2
+        weight: 1
+      - path: Root/R_Wing
+        weight: 1
+      - path: Root/R_Wing/R_Wing_2
+        weight: 1
+      - path: ROOT
+        weight: 1
+      - path: ROOT/Gusha_1_Ctrl
+        weight: 1
+      - path: ROOT/Gusha_1_Ctrl/Head_Ctrl
+        weight: 1
+      - path: ROOT/L_Leg_Ctrl
+        weight: 1
+      - path: ROOT/L_Leg_Ctrl/L_Knee_Ctrl
+        weight: 1
+      - path: ROOT/L_Leg_Ctrl/L_Knee_Ctrl/L_Foot_Ctrl
+        weight: 1
+      - path: ROOT/L_Wing_Ctrl
+        weight: 1
+      - path: ROOT/R_Leg_Ctrl
+        weight: 1
+      - path: ROOT/R_Leg_Ctrl/R_Knee_Ctrl
+        weight: 1
+      - path: ROOT/R_Leg_Ctrl/R_Knee_Ctrl/R_Foot_Ctrl
+        weight: 1
+      - path: ROOT/R_Wing_Ctrl
+        weight: 1
+      - path: ROOT/Robe_1_Ctrl
+        weight: 1
+      - path: ROOT/Robe_1_Ctrl/Robe_2_Ctrl
+        weight: 1
+      - path: ROOT/Robe_1_Ctrl/Robe_2_Ctrl/Robe_3_Ctrl
+        weight: 1
+      - path: ROOT/Tail_1_Ctrl
+        weight: 1
+      - path: ROOT/Tail_1_Ctrl/Tail_2_Ctrl
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Boost
+      takeName: Take 001
+      firstFrame: 61
+      lastFrame: 70
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: group1
+        weight: 1
+      - path: polySurface4
+        weight: 1
+      - path: polySurface4/polySurface16
+        weight: 1
+      - path: polySurface4/polySurface23
+        weight: 1
+      - path: polySurface24
+        weight: 1
+      - path: Root
+        weight: 1
+      - path: Root/Cloth_1
+        weight: 1
+      - path: Root/Cloth_1/Cloth_2
+        weight: 1
+      - path: Root/Cloth_1/Cloth_2/Cloth_3
+        weight: 1
+      - path: Root/Cloth_1/Cloth_2/Cloth_3/Cloth_4
+        weight: 1
+      - path: Root/Cloth_1/Cloth_2/Cloth_3/Cloth_4/Cloth_5
+        weight: 1
+      - path: Root/Gusha
+        weight: 1
+      - path: Root/Gusha/Head
+        weight: 1
+      - path: Root/Gusha/Head/joint1
+        weight: 1
+      - path: Root/Hips
+        weight: 1
+      - path: Root/Hips/L_Leg
+        weight: 1
+      - path: Root/Hips/L_Leg/L_Knee
+        weight: 1
+      - path: Root/Hips/L_Leg/L_Knee/L_Ankle
+        weight: 1
+      - path: Root/Hips/L_Leg/L_Knee/L_Ankle/L_Toe
+        weight: 1
+      - path: Root/Hips/R_Leg
+        weight: 1
+      - path: Root/Hips/R_Leg/R_Knee
+        weight: 1
+      - path: Root/Hips/R_Leg/R_Knee/R_Ankle
+        weight: 1
+      - path: Root/Hips/R_Leg/R_Knee/R_Ankle/R_Toe
+        weight: 1
+      - path: Root/Hips/Tail_1
+        weight: 1
+      - path: Root/Hips/Tail_1/Tail_2
+        weight: 1
+      - path: Root/Hips/Tail_1/Tail_2/Tail_3
+        weight: 1
+      - path: Root/L_Wing
+        weight: 1
+      - path: Root/L_Wing/L_Wing_2
+        weight: 1
+      - path: Root/R_Wing
+        weight: 1
+      - path: Root/R_Wing/R_Wing_2
+        weight: 1
+      - path: ROOT
+        weight: 1
+      - path: ROOT/Gusha_1_Ctrl
+        weight: 1
+      - path: ROOT/Gusha_1_Ctrl/Head_Ctrl
+        weight: 1
+      - path: ROOT/L_Leg_Ctrl
+        weight: 1
+      - path: ROOT/L_Leg_Ctrl/L_Knee_Ctrl
+        weight: 1
+      - path: ROOT/L_Leg_Ctrl/L_Knee_Ctrl/L_Foot_Ctrl
+        weight: 1
+      - path: ROOT/L_Wing_Ctrl
+        weight: 1
+      - path: ROOT/R_Leg_Ctrl
+        weight: 1
+      - path: ROOT/R_Leg_Ctrl/R_Knee_Ctrl
+        weight: 1
+      - path: ROOT/R_Leg_Ctrl/R_Knee_Ctrl/R_Foot_Ctrl
+        weight: 1
+      - path: ROOT/R_Wing_Ctrl
+        weight: 1
+      - path: ROOT/Robe_1_Ctrl
+        weight: 1
+      - path: ROOT/Robe_1_Ctrl/Robe_2_Ctrl
+        weight: 1
+      - path: ROOT/Robe_1_Ctrl/Robe_2_Ctrl/Robe_3_Ctrl
+        weight: 1
+      - path: ROOT/Tail_1_Ctrl
+        weight: 1
+      - path: ROOT/Tail_1_Ctrl/Tail_2_Ctrl
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Hit
+      takeName: Take 001
+      firstFrame: 71
+      lastFrame: 75
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: group1
+        weight: 1
+      - path: polySurface4
+        weight: 1
+      - path: polySurface4/polySurface16
+        weight: 1
+      - path: polySurface4/polySurface23
+        weight: 1
+      - path: polySurface24
+        weight: 1
+      - path: Root
+        weight: 1
+      - path: Root/Cloth_1
+        weight: 1
+      - path: Root/Cloth_1/Cloth_2
+        weight: 1
+      - path: Root/Cloth_1/Cloth_2/Cloth_3
+        weight: 1
+      - path: Root/Cloth_1/Cloth_2/Cloth_3/Cloth_4
+        weight: 1
+      - path: Root/Cloth_1/Cloth_2/Cloth_3/Cloth_4/Cloth_5
+        weight: 1
+      - path: Root/Gusha
+        weight: 1
+      - path: Root/Gusha/Head
+        weight: 1
+      - path: Root/Gusha/Head/joint1
+        weight: 1
+      - path: Root/Hips
+        weight: 1
+      - path: Root/Hips/L_Leg
+        weight: 1
+      - path: Root/Hips/L_Leg/L_Knee
+        weight: 1
+      - path: Root/Hips/L_Leg/L_Knee/L_Ankle
+        weight: 1
+      - path: Root/Hips/L_Leg/L_Knee/L_Ankle/L_Toe
+        weight: 1
+      - path: Root/Hips/R_Leg
+        weight: 1
+      - path: Root/Hips/R_Leg/R_Knee
+        weight: 1
+      - path: Root/Hips/R_Leg/R_Knee/R_Ankle
+        weight: 1
+      - path: Root/Hips/R_Leg/R_Knee/R_Ankle/R_Toe
+        weight: 1
+      - path: Root/Hips/Tail_1
+        weight: 1
+      - path: Root/Hips/Tail_1/Tail_2
+        weight: 1
+      - path: Root/Hips/Tail_1/Tail_2/Tail_3
+        weight: 1
+      - path: Root/L_Wing
+        weight: 1
+      - path: Root/L_Wing/L_Wing_2
+        weight: 1
+      - path: Root/R_Wing
+        weight: 1
+      - path: Root/R_Wing/R_Wing_2
+        weight: 1
+      - path: ROOT
+        weight: 1
+      - path: ROOT/Gusha_1_Ctrl
+        weight: 1
+      - path: ROOT/Gusha_1_Ctrl/Head_Ctrl
+        weight: 1
+      - path: ROOT/L_Leg_Ctrl
+        weight: 1
+      - path: ROOT/L_Leg_Ctrl/L_Knee_Ctrl
+        weight: 1
+      - path: ROOT/L_Leg_Ctrl/L_Knee_Ctrl/L_Foot_Ctrl
+        weight: 1
+      - path: ROOT/L_Wing_Ctrl
+        weight: 1
+      - path: ROOT/R_Leg_Ctrl
+        weight: 1
+      - path: ROOT/R_Leg_Ctrl/R_Knee_Ctrl
+        weight: 1
+      - path: ROOT/R_Leg_Ctrl/R_Knee_Ctrl/R_Foot_Ctrl
+        weight: 1
+      - path: ROOT/R_Wing_Ctrl
+        weight: 1
+      - path: ROOT/Robe_1_Ctrl
+        weight: 1
+      - path: ROOT/Robe_1_Ctrl/Robe_2_Ctrl
+        weight: 1
+      - path: ROOT/Robe_1_Ctrl/Robe_2_Ctrl/Robe_3_Ctrl
+        weight: 1
+      - path: ROOT/Tail_1_Ctrl
+        weight: 1
+      - path: ROOT/Tail_1_Ctrl/Tail_2_Ctrl
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 76
+      lastFrame: 90
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: group1
+        weight: 1
+      - path: polySurface4
+        weight: 1
+      - path: polySurface4/polySurface16
+        weight: 1
+      - path: polySurface4/polySurface23
+        weight: 1
+      - path: polySurface24
+        weight: 1
+      - path: Root
+        weight: 1
+      - path: Root/Cloth_1
+        weight: 1
+      - path: Root/Cloth_1/Cloth_2
+        weight: 1
+      - path: Root/Cloth_1/Cloth_2/Cloth_3
+        weight: 1
+      - path: Root/Cloth_1/Cloth_2/Cloth_3/Cloth_4
+        weight: 1
+      - path: Root/Cloth_1/Cloth_2/Cloth_3/Cloth_4/Cloth_5
+        weight: 1
+      - path: Root/Gusha
+        weight: 1
+      - path: Root/Gusha/Head
+        weight: 1
+      - path: Root/Gusha/Head/joint1
+        weight: 1
+      - path: Root/Hips
+        weight: 1
+      - path: Root/Hips/L_Leg
+        weight: 1
+      - path: Root/Hips/L_Leg/L_Knee
+        weight: 1
+      - path: Root/Hips/L_Leg/L_Knee/L_Ankle
+        weight: 1
+      - path: Root/Hips/L_Leg/L_Knee/L_Ankle/L_Toe
+        weight: 1
+      - path: Root/Hips/R_Leg
+        weight: 1
+      - path: Root/Hips/R_Leg/R_Knee
+        weight: 1
+      - path: Root/Hips/R_Leg/R_Knee/R_Ankle
+        weight: 1
+      - path: Root/Hips/R_Leg/R_Knee/R_Ankle/R_Toe
+        weight: 1
+      - path: Root/Hips/Tail_1
+        weight: 1
+      - path: Root/Hips/Tail_1/Tail_2
+        weight: 1
+      - path: Root/Hips/Tail_1/Tail_2/Tail_3
+        weight: 1
+      - path: Root/L_Wing
+        weight: 1
+      - path: Root/L_Wing/L_Wing_2
+        weight: 1
+      - path: Root/R_Wing
+        weight: 1
+      - path: Root/R_Wing/R_Wing_2
+        weight: 1
+      - path: ROOT
+        weight: 1
+      - path: ROOT/Gusha_1_Ctrl
+        weight: 1
+      - path: ROOT/Gusha_1_Ctrl/Head_Ctrl
+        weight: 1
+      - path: ROOT/L_Leg_Ctrl
+        weight: 1
+      - path: ROOT/L_Leg_Ctrl/L_Knee_Ctrl
+        weight: 1
+      - path: ROOT/L_Leg_Ctrl/L_Knee_Ctrl/L_Foot_Ctrl
+        weight: 1
+      - path: ROOT/L_Wing_Ctrl
+        weight: 1
+      - path: ROOT/R_Leg_Ctrl
+        weight: 1
+      - path: ROOT/R_Leg_Ctrl/R_Knee_Ctrl
+        weight: 1
+      - path: ROOT/R_Leg_Ctrl/R_Knee_Ctrl/R_Foot_Ctrl
+        weight: 1
+      - path: ROOT/R_Wing_Ctrl
+        weight: 1
+      - path: ROOT/Robe_1_Ctrl
+        weight: 1
+      - path: ROOT/Robe_1_Ctrl/Robe_2_Ctrl
+        weight: 1
+      - path: ROOT/Robe_1_Ctrl/Robe_2_Ctrl/Robe_3_Ctrl
+        weight: 1
+      - path: ROOT/Tail_1_Ctrl
+        weight: 1
+      - path: ROOT/Tail_1_Ctrl/Tail_2_Ctrl
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .0199999996
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
