@@ -22,6 +22,7 @@ public class MovementManager : MonoBehaviour {
 
 	private bool leftButtonPressed = false;
 	private bool rightButtonPressed = false;
+    private bool moving = false;
 	private float movementDirection;
 	private float movementSpeed;
     public float Speed { get { return movementSpeed; } }
@@ -60,11 +61,12 @@ public class MovementManager : MonoBehaviour {
 		    currentRotationAngle < MaxAngleRotation-10 && rotationOffset > 0 ||
 		    currentRotationAngle > MinAngleRotation+10 && rotationOffset < 0) 
 		{
-			if (leftButtonPressed || rightButtonPressed) {
+            if (moving)
+            {
 				Quaternion UProtation = Quaternion.LookRotation(Vector3.forward);
-				transform.rotation = Quaternion.Slerp(transform.rotation, UProtation, -rotationOffset);
+				transform.rotation = Quaternion.Slerp(transform.rotation, UProtation, movementDirection * rotationOffset);
 			} else {
-				transform.RotateAround (rotationPoint.position, Vector3.forward, -rotationOffset );
+				transform.RotateAround (rotationPoint.position, Vector3.forward, rotationOffset );
 			}
 		}
 		transform.Translate (horizontalOffset, verticalOffset, 0);
@@ -72,20 +74,10 @@ public class MovementManager : MonoBehaviour {
 
 	private void getInput() {
 
-        leftButtonPressed = Input.GetKey("left");
-        rightButtonPressed = Input.GetKey("right");
-        if (leftButtonPressed)
-        {
-            movementDirection += -.1f;
-        }
-        else if (rightButtonPressed)
-        {
-            movementDirection += .1f;
-        }
-        else
-        {
-            movementDirection = 0;
-        }
+
+        float speed = Input.GetAxis("Horizontal");
+        moving = Mathf.Abs(Input.GetAxis("Horizontal")) > 0;
+        movementDirection  = speed;
 	}
 
 	private void startRandomDrunkness() {
@@ -98,9 +90,10 @@ public class MovementManager : MonoBehaviour {
 	public IEnumerator drunknessRotation () {
 		drunkCoroutineStarted = true;
         drunkRotation = Random.Range(-randomTilt, randomTilt);
-		for (int i=0; i < 10; i++) {
+		
+        for (int i=0; i < 10; i++) {
 			yield return new WaitForSeconds (1f);
-            drunkRotation += 1.5f;
+            drunkRotation +=  Mathf.Sign(drunkRotation) * 1.5f;
 		}
 		drunkCoroutineStarted = false;
 		drunkRotation = 0;
@@ -108,7 +101,8 @@ public class MovementManager : MonoBehaviour {
 	}
 
 	private float getRotation() {
-		if (leftButtonPressed || rightButtonPressed) {
+        if (moving)
+        {
 			return movementDirection * rotationSpeed * Time.deltaTime;
 		} else {
 			return drunkRotation * Time.deltaTime;
@@ -116,7 +110,8 @@ public class MovementManager : MonoBehaviour {
 	}
 
 	private float getHorizontalMovement() {
-		float offset = movementDirection * Time.deltaTime;
+		
+        float offset = movementDirection * Time.deltaTime;
 		offset += transform.position.x;
         float actualOffset = Mathf.Clamp(offset, -screenWidth / 2 + Camera.main.transform.position.x, 
                                                             screenWidth / 2 + Camera.main.transform.position.x);
@@ -124,12 +119,15 @@ public class MovementManager : MonoBehaviour {
 	}
 
 	private float getVericalMovement() {
-		movementSpeed -= slowingFactor * Time.smoothDeltaTime;
+	
+        movementSpeed -= slowingFactor * Time.smoothDeltaTime;
 		movementSpeed = Mathf.Clamp (movementSpeed, minSoberSpeed, maxFullyDrunkSpeed);
 		return movementSpeed * Time.smoothDeltaTime;
-	}
+
+    }
 
 	void OnGUI() {
-		GUI.Label(new Rect( 450,5, 30,30),""+movementSpeed);
+		
+        GUI.Label(new Rect( 450,5, 30,30),"" + movementSpeed);
 	}
 }
