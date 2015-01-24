@@ -24,10 +24,10 @@ public class MovementManager : MonoBehaviour {
 	private bool rightButtonPressed = false;
 	private float movementDirection;
 	private float movementSpeed;
-
-
     public float Speed { get { return movementSpeed; } }
-	void Start() {
+	private CameraAnimationController cameraAnimController;
+		void Start() {
+		//cameraAnimController = Camera.main.GetComponent<CameraAnimationController> ();
 		MinAngleRotation = maxAngleRotation; 
 		MaxAngleRotation = 360f - maxAngleRotation;
 		movementSpeed = startSpeed;
@@ -36,6 +36,7 @@ public class MovementManager : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 		if (other.CompareTag ("Booster")) {
 			movementSpeed += boosterSpeed;
+			//cameraAnimController.playerCollectedBooster();
 		}
 
 		if (other.CompareTag ("Fucker")) {

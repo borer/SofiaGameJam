@@ -13,6 +13,9 @@ GameObject:
   - 124: {fileID: 12421528}
   - 81: {fileID: 8121528}
   - 114: {fileID: 11421528}
+  - 114: {fileID: 11447406}
+  - 95: {fileID: 9500384}
+  - 114: {fileID: 11497274}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -78,6 +81,21 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 121528}
   m_Enabled: 1
+--- !u!95 &9500384
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 121528}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e4d13c0efafe5ee42a5de891bcd8ab32, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11421528
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -91,6 +109,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceFromObject: {x: 0, y: 4, z: -10}
   objectToFollow: {fileID: 0}
+--- !u!114 &11447406
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 121528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7db9ec1392f34265817a55853e6ab07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  filterType: 2
+  preview: 0
+  previewScale: {x: 1, y: 1, z: 1}
+  movementScale: 5
+  rotationScale: 1
+  maxVelocity: 15
+  minVelocity: .5
+  velocityScale: 1.20000005
+  softZDistance: .00499999989
+  velocityDownsample: 1
+  excludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  shader: {fileID: 4800000, guid: 85a88efa8c871af4a9d17c64791b6f4f, type: 3}
+  dx11MotionBlurShader: {fileID: 4800000, guid: f1b13d7a80660504a858ea24cfa418c6,
+    type: 3}
+  replacementClear: {fileID: 4800000, guid: 7699c5fbfa27745a1abe111ab7bf9785, type: 3}
+  noiseTexture: {fileID: 2800000, guid: 31f5a8611c4ed1245b18456206e798dc, type: 3}
+  jitter: .300000012
+  showVelocity: 0
+  showVelocityScale: 1
+--- !u!114 &11497274
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 121528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8516710127f6174d9350f0ac74898d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!124 &12421528
 Behaviour:
   m_ObjectHideFlags: 1
