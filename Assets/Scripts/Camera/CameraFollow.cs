@@ -19,13 +19,14 @@ public class CameraFollow : MonoBehaviour {
 
     void Update()
     {
-        m_delta = transform.position - m_lastPos;
+        m_delta =Vector3.up* 20 * Time.smoothDeltaTime;
         m_lastPos = transform.position;
+        transform.Translate(0, 20 * Time.smoothDeltaTime, 0);
     }
 
     void LateUpdate()
     {
-        transform.position = new Vector3(transform.position.x, objectToFollow.position.y + 1, transform.position.z);
+
         //var ast = GameObject.FindGameObjectWithTag("Asteroid");
         //if (ast.transform.position.y - transform.position.y < MIN_DISTANCE_FACTOR * ast.transform.position.y)
         //    Application.LoadLevel(m_cutSceneName);

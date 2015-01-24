@@ -14,8 +14,8 @@ public class MovementManager : MonoBehaviour {
 	public float screenWidth = .1f;
 
 	public Transform rotationPoint;
-	public Transform fuckerParticlePrefab;
-	public Transform boosterParticlePrefab;
+    //public Transform fuckerParticlePrefab;
+    //public Transform boosterParticlePrefab;
 
 	private float MinAngleRotation; 
 	private float MaxAngleRotation;
@@ -26,10 +26,10 @@ public class MovementManager : MonoBehaviour {
 	private float movementDirection;
 	private float movementSpeed;
     public float Speed { get { return movementSpeed; } }
-	private CameraAnimationController cameraAnimController;
+	//private CameraAnimationController cameraAnimController;
 
 	void Start() {
-		cameraAnimController = Camera.main.GetComponent<CameraAnimationController> ();
+		//cameraAnimController = Camera.main.GetComponent<CameraAnimationController> ();
 		MinAngleRotation = maxAngleRotation; 
 		MaxAngleRotation = 360f - maxAngleRotation;
 		movementSpeed = startSpeed;
@@ -38,15 +38,15 @@ public class MovementManager : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 		if (other.CompareTag ("Booster")) {
 			movementSpeed += boosterSpeed;
-			cameraAnimController.playerCollectedBooster();
-			GameObject instance = CFX_SpawnSystem.GetNextObject(boosterParticlePrefab.gameObject);
-			instance.transform.position = transform.position;
+			//cameraAnimController.playerCollectedBooster();
+            //GameObject instance = CFX_SpawnSystem.GetNextObject(boosterParticlePrefab.gameObject);
+            //instance.transform.position = transform.position;
 		}
 
 		if (other.CompareTag ("Fucker")) {
 			movementSpeed += fuckerSpeed;
-			GameObject instance = CFX_SpawnSystem.GetNextObject(fuckerParticlePrefab.gameObject);
-			instance.transform.position = transform.position;
+            //GameObject instance = CFX_SpawnSystem.GetNextObject(fuckerParticlePrefab.gameObject);
+            //instance.transform.position = transform.position;
 		}
 
 		Destroy(other.gameObject);

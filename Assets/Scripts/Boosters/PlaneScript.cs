@@ -12,7 +12,7 @@ public class PlaneScript : MonoBehaviour {
         if (m_direction < 0)
             transform.rotation *= Quaternion.AngleAxis(180, Vector3.up);
 
-        m_speed = Random.Range(1, 5);
+        m_speed = Random.Range(3, 8);
 	}
 	
 	// Update is called once per frame

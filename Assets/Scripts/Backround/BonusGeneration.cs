@@ -15,8 +15,10 @@ public class BonusGeneration : BackgroundObjectGen {
     {
         Vector3 pos = Camera.main.transform.position;
         pos.y += m_generationOffset;
-        pos.z = GameObject.FindGameObjectWithTag("Player").transform.position.z;
+        pos.z = transform.position.z;
         pos.x += Random.Range(m_leftLimit, m_rightLimit);
+
+        Debug.Log(pos);
         return pos;
     }
 

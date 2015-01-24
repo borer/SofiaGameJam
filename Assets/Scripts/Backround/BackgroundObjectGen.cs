@@ -35,7 +35,8 @@ public class BackgroundObjectGen : MonoBehaviour {
         float pos = Camera.main.transform.position.y / m_maxDistance;
         if (pos < m_begin || pos > m_end)
             return false;
-        m_distance -= Camera.main.GetComponent<CameraFollow>().DeltaPos.y + m_verticalSpeed * Time.deltaTime;
+        m_distance -= Camera.main.GetComponent<CameraFollow>().DeltaPos.y;
+        m_distance += m_verticalSpeed;
         bool shouldGenerate = m_distance < 0;
 
         if (shouldGenerate)
@@ -47,22 +48,21 @@ public class BackgroundObjectGen : MonoBehaviour {
 
     protected virtual GameObject makeObject(Vector3 pos)
     {
-        return (GameObject)Instantiate(m_prefabs[0], pos, Quaternion.identity);
+        return (GameObject)Instantiate(m_prefabs[Random.Range(0, m_prefabs.Length - 1)], pos, Quaternion.identity);
     }
 
     protected virtual Vector3 caculatePos()
     {
         Vector3 pos = Camera.main.transform.position;
         pos.y += m_generationOffset;
-        pos.z = transform.position.z - 1;
+        pos.z = transform.position.z - 3;
         pos.x += Random.Range(m_leftLimit, m_rightLimit);
         return pos;
     }
 
 	void LateUpdate () 
     {
-
-        m_verticalSpeed = m_verticalSpeedFactor * m_player.GetComponent<MovementManager>().Speed;
+        m_verticalSpeed = m_verticalSpeedFactor * Camera.main.GetComponent<CameraFollow>().DeltaPos.y;
         if (Generate())
         {
             m_objects.Add(makeObject(caculatePos()));
@@ -83,7 +83,7 @@ public class BackgroundObjectGen : MonoBehaviour {
             else
             {
                 Vector3 pos = m_objects[i].transform.position;
-                pos.y += m_verticalSpeed * Time.smoothDeltaTime;
+                pos.y += m_verticalSpeed;
                 m_objects[i].transform.position = pos;
             }
         }
