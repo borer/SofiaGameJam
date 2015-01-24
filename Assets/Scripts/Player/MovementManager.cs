@@ -3,12 +3,15 @@ using System.Collections;
 
 public class MovementManager : MonoBehaviour {
 	public float startSpeed = 3f;
+	public float minSoberSpeed = 2f;
+	public float maxFullyDrunkSpeed = 10f;
 	public float slowingFactor = 0.5f;
 	public float boosterSpeed = 5f;
 	public float fuckerSpeed = -3f;
 	public float rotationSpeed = 20f;
 	public float randomTilt = 0.5f;
 	public float maxAngleRotation = 20f;
+	public float screenWidth = 20f;
 
 	public Transform rotationPoint;
 
@@ -81,7 +84,7 @@ public class MovementManager : MonoBehaviour {
 	public IEnumerator drunknessRotation () {
 		drunkCoroutineStarted = true;
 		drunkRotation = Random.Range (-randomTilt, randomTilt);
-		for (int i=0; i<10; i++) {
+		for (int i=0; i < 10; i++) {
 			yield return new WaitForSeconds (1f);
 			drunkRotation += 1.5f;
 		}
@@ -99,11 +102,15 @@ public class MovementManager : MonoBehaviour {
 	}
 
 	private float getHorizontalMovement() {
-		return movementDirection * Time.deltaTime;
+		float offset = movementDirection * Time.deltaTime;
+		offset += transform.position.x;
+		float actualOffset = Mathf.Clamp (offset, -screenWidth / 2, screenWidth / 2);
+		return actualOffset - transform.position.x;
 	}
 
 	private float getVericalMovement() {
 		movementSpeed -= slowingFactor * Time.smoothDeltaTime;
+		movementSpeed = Mathf.Clamp (movementSpeed, minSoberSpeed, maxFullyDrunkSpeed);
 		return movementSpeed * Time.smoothDeltaTime;
 	}
 
