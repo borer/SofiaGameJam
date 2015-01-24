@@ -56,7 +56,12 @@ public class MovementManager : MonoBehaviour {
 		    currentRotationAngle < MaxAngleRotation-10 && rotationOffset > 0 ||
 		    currentRotationAngle > MinAngleRotation+10 && rotationOffset < 0) 
 		{
-			transform.RotateAround (rotationPoint.position, Vector3.forward, -rotationOffset );
+			if (leftButtonPressed || rightButtonPressed) {
+				Quaternion UProtation = Quaternion.LookRotation(Vector3.forward);
+				transform.rotation = Quaternion.Slerp(transform.rotation, UProtation, -rotationOffset);
+			} else {
+				transform.RotateAround (rotationPoint.position, Vector3.forward, -rotationOffset );
+			}
 		}
 		transform.Translate (horizontalOffset, verticalOffset, 0);
 	}
