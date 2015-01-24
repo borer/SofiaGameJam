@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MovementManager : MonoBehaviour {
 	public float startSpeed = 3f;
-	public float minSoberSpeed = 2f;
+	public float minSoberSpeed = 10f;
 	public float maxFullyDrunkSpeed = 10f;
 	public float slowingFactor = 0.5f;
 	public float boosterSpeed = 5f;

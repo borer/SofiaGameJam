@@ -258,11 +258,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11448490, guid: fffc2f1170884ed46aed9b8e49f383d5, type: 2}
       propertyPath: minSoberSpeed
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 11448490, guid: fffc2f1170884ed46aed9b8e49f383d5, type: 2}
       propertyPath: startSpeed
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11448490, guid: fffc2f1170884ed46aed9b8e49f383d5, type: 2}
       propertyPath: maxFullyDrunkSpeed
@@ -394,8 +394,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5681896502cc60e419d407ddf2d942a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_leftLimit: -5
-  m_rightLimit: 5
+  m_leftLimit: -4
+  m_rightLimit: 4
   m_generationOffset: 5
   m_startInterval: 50
   m_endInterval: 50
@@ -403,7 +403,7 @@ MonoBehaviour:
   - {fileID: 149906, guid: 469859cf46bac9643aa498601ceed595, type: 2}
   - {fileID: 132208, guid: 9352965807bf1d0448dc902a9e689f2c, type: 2}
   m_begin: 0
-  m_end: 1000
+  m_end: 1.20000005
   m_interval: 10
   m_verticalSpeedFactor: .899999976
 --- !u!4 &253411359
@@ -429,15 +429,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5681896502cc60e419d407ddf2d942a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_leftLimit: -5
-  m_rightLimit: 5
+  m_leftLimit: -4
+  m_rightLimit: 4
   m_generationOffset: 5
   m_startInterval: 50
   m_endInterval: 50
   m_prefabs:
+  - {fileID: 105432, guid: 6a446a0cb763856439f05416af5ba7c7, type: 2}
+  - {fileID: 184478, guid: 73face3404e4ff840920793eccce4fca, type: 2}
   - {fileID: 122974, guid: 31201cc2c174cb7468a4fae093c8ffdd, type: 2}
   m_begin: 0
-  m_end: 1000
+  m_end: 1.20000005
   m_interval: 10
   m_verticalSpeedFactor: .899999976
 --- !u!1001 &278763896
@@ -675,7 +677,7 @@ Transform:
   m_GameObject: {fileID: 1226972329}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1747135910}
   m_RootOrder: 0
@@ -692,7 +694,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 72fa26fa473ad42a583c07511677fd60, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -707,7 +709,7 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 136287718}
   m_GameObject: {fileID: 1226972329}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: f6e037f72544942cab81e32db4b5e01d, type: 3}
 --- !u!1 &1310813098
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,7 +833,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 3
   m_Type: 1
-  m_Color: {r: .985294104, g: .966607451, b: .905601203, a: 1}
+  m_Color: {r: .992647052, g: .9122082, b: .64959991, a: 1}
   m_Intensity: .430000007
   m_Range: 10
   m_SpotAngle: 30
@@ -879,7 +881,7 @@ GameObject:
   - 4: {fileID: 1485503800}
   m_Layer: 0
   m_Name: Asteroid
-  m_TagString: Untagged
+  m_TagString: Asteroid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -907,6 +909,7 @@ GameObject:
   - 114: {fileID: 1747135909}
   - 54: {fileID: 1747135912}
   - 65: {fileID: 1747135911}
+  - 95: {fileID: 1747135913}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -926,8 +929,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e847249afee50c46bae946954ca2b5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSpeed: 10
-  minSoberSpeed: 5
+  startSpeed: 1
+  minSoberSpeed: 10
   maxFullyDrunkSpeed: 20
   slowingFactor: .5
   boosterSpeed: 5
@@ -937,6 +940,8 @@ MonoBehaviour:
   maxAngleRotation: 20
   screenWidth: 5
   rotationPoint: {fileID: 1026971462}
+  fuckerParticlePrefab: {fileID: 0}
+  boosterParticlePrefab: {fileID: 0}
 --- !u!4 &1747135910
 Transform:
   m_ObjectHideFlags: 0
@@ -980,6 +985,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &1747135913
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 9567788, guid: fffc2f1170884ed46aed9b8e49f383d5,
+    type: 2}
+  m_PrefabInternal: {fileID: 136287718}
+  m_GameObject: {fileID: 1747135908}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1868296242
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,8 +1039,8 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 285a11c5031c8f84b996606d6c14e530, type: 2}
   - {fileID: 2100000, guid: a6bcb6d2d6d89c14b8be9e7f36cf8fb0, type: 2}
   m_heights:
-  - 400
-  - 800
+  - .400000006
+  - .800000012
 --- !u!4 &1868296244
 Transform:
   m_ObjectHideFlags: 0
@@ -1043,16 +1064,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9b71194b0805594b8298a0949e49628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_leftLimit: -15
-  m_rightLimit: 15
+  m_leftLimit: -20
+  m_rightLimit: 20
   m_generationOffset: 25
   m_startInterval: 5
   m_endInterval: 20
   m_prefabs:
-  - {fileID: 120524, guid: 95c9a7a4a02087f4b915d697045bb582, type: 2}
-  - {fileID: 184840, guid: 3f38824df94c542489419097a01cba8d, type: 2}
+  - {fileID: 168992, guid: 1c93fa75f26d518418636816d8aae69d, type: 2}
+  - {fileID: 157470, guid: 8d5178e863612664fa94ef19650a0daa, type: 2}
+  - {fileID: 198346, guid: b1a454abe7c91404389e58720f156106, type: 2}
+  - {fileID: 175372, guid: 9bcc4aac39eaa5d47a5006f04649094f, type: 2}
+  - {fileID: 107916, guid: e331c7fd39a94634c97287645e1abcd3, type: 2}
+  - {fileID: 148670, guid: 510865c1f760f384697d1fa9afed37c0, type: 2}
+  - {fileID: 108138, guid: 370eeaed5c23f9246bdf2b1696a42c09, type: 2}
   m_begin: 0
-  m_end: 600
+  m_end: .600000024
   m_interval: 10
   m_verticalSpeedFactor: 0
 --- !u!114 &1868296246
@@ -1066,15 +1092,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9b71194b0805594b8298a0949e49628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_leftLimit: -15
-  m_rightLimit: 15
+  m_leftLimit: -20
+  m_rightLimit: 20
   m_generationOffset: 25
   m_startInterval: 5
   m_endInterval: .100000001
   m_prefabs:
   - {fileID: 150982, guid: 63db5aa319be6074788508be6adb068b, type: 2}
-  m_begin: 400
-  m_end: 1000
+  m_begin: .400000006
+  m_end: 1.20000005
   m_interval: 10
   m_verticalSpeedFactor: 0
 --- !u!1 &1966006569
@@ -1191,6 +1217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceFromObject: {x: 0, y: 1, z: -1}
   objectToFollow: {fileID: 1747135910}
+  m_cutSceneName: AsteroidScene
 --- !u!1 &2126602285
 GameObject:
   m_ObjectHideFlags: 0

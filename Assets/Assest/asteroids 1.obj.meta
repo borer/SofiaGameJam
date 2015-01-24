@@ -1,0 +1,97 @@
+fileFormatVersion: 2
+guid: 13f3f4ff5050c6c46893856ec496c484
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: asteroid_1
+    100002: asteroid_2
+    100004: asteroid_3
+    100006: asteroid_5
+    100008: asteroid_6
+    100010: asteroid_7
+    100012: asteroid_8
+    100014: //RootNode
+    400000: asteroid_1
+    400002: asteroid_2
+    400004: asteroid_3
+    400006: asteroid_5
+    400008: asteroid_6
+    400010: asteroid_7
+    400012: asteroid_8
+    400014: //RootNode
+    2300000: asteroid_1
+    2300002: asteroid_2
+    2300004: asteroid_3
+    2300006: asteroid_5
+    2300008: asteroid_6
+    2300010: asteroid_7
+    2300012: asteroid_8
+    3300000: asteroid_1
+    3300002: asteroid_2
+    3300004: asteroid_3
+    3300006: asteroid_5
+    3300008: asteroid_6
+    3300010: asteroid_7
+    3300012: asteroid_8
+    4300000: asteroid_1
+    4300002: asteroid_2
+    4300004: asteroid_3
+    4300006: asteroid_5
+    4300008: asteroid_6
+    4300010: asteroid_7
+    4300012: asteroid_8
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

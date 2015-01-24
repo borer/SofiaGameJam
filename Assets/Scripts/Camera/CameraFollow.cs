@@ -10,6 +10,8 @@ public class CameraFollow : MonoBehaviour {
     public Vector3 DeltaPos { get { return m_delta; } }
     private Vector3 m_lastPos;
     private Vector3 m_delta;
+    private const float MIN_DISTANCE_FACTOR = 0.1f;
+    public string m_cutSceneName = "TempScene";
     void Start()
     {
         m_lastPos = transform.position;
@@ -24,6 +26,9 @@ public class CameraFollow : MonoBehaviour {
     void LateUpdate()
     {
         transform.position = new Vector3(transform.position.x, objectToFollow.position.y + 1, transform.position.z);
+        //var ast = GameObject.FindGameObjectWithTag("Asteroid");
+        //if (ast.transform.position.y - transform.position.y < MIN_DISTANCE_FACTOR * ast.transform.position.y)
+        //    Application.LoadLevel(m_cutSceneName);
     }
 
 
