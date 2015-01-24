@@ -258,15 +258,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11448490, guid: fffc2f1170884ed46aed9b8e49f383d5, type: 2}
       propertyPath: minSoberSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 11448490, guid: fffc2f1170884ed46aed9b8e49f383d5, type: 2}
-      propertyPath: startSpeed
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 11448490, guid: fffc2f1170884ed46aed9b8e49f383d5, type: 2}
+      propertyPath: startSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11448490, guid: fffc2f1170884ed46aed9b8e49f383d5, type: 2}
       propertyPath: maxFullyDrunkSpeed
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 107836, guid: fffc2f1170884ed46aed9b8e49f383d5, type: 2}
       propertyPath: m_TagString
@@ -926,9 +926,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e847249afee50c46bae946954ca2b5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSpeed: 10
-  minSoberSpeed: 5
-  maxFullyDrunkSpeed: 20
+  startSpeed: 1
+  minSoberSpeed: 10
+  maxFullyDrunkSpeed: 10
   slowingFactor: .5
   boosterSpeed: 5
   fuckerSpeed: -3
@@ -1049,8 +1049,13 @@ MonoBehaviour:
   m_startInterval: 5
   m_endInterval: 20
   m_prefabs:
-  - {fileID: 120524, guid: 95c9a7a4a02087f4b915d697045bb582, type: 2}
-  - {fileID: 184840, guid: 3f38824df94c542489419097a01cba8d, type: 2}
+  - {fileID: 168992, guid: 1c93fa75f26d518418636816d8aae69d, type: 2}
+  - {fileID: 157470, guid: 8d5178e863612664fa94ef19650a0daa, type: 2}
+  - {fileID: 198346, guid: b1a454abe7c91404389e58720f156106, type: 2}
+  - {fileID: 175372, guid: 9bcc4aac39eaa5d47a5006f04649094f, type: 2}
+  - {fileID: 107916, guid: e331c7fd39a94634c97287645e1abcd3, type: 2}
+  - {fileID: 148670, guid: 510865c1f760f384697d1fa9afed37c0, type: 2}
+  - {fileID: 108138, guid: 370eeaed5c23f9246bdf2b1696a42c09, type: 2}
   m_begin: 0
   m_end: .600000024
   m_interval: 10
@@ -1191,6 +1196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceFromObject: {x: 0, y: 1, z: -1}
   objectToFollow: {fileID: 1747135910}
+  m_cutSceneName: AsteroidScene
 --- !u!1 &2126602285
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,15 +1,45 @@
 fileFormatVersion: 2
-guid: f8ef2546a6cd86249a7a2b3bcf195619
+guid: 13f3f4ff5050c6c46893856ec496c484
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Box44
-    400000: //RootNode
-    400002: Box44
-    2300000: Box44
-    3300000: Box44
-    4300000: Box44
+    100000: asteroid_1
+    100002: asteroid_2
+    100004: asteroid_3
+    100006: asteroid_5
+    100008: asteroid_6
+    100010: asteroid_7
+    100012: asteroid_8
+    100014: //RootNode
+    400000: asteroid_1
+    400002: asteroid_2
+    400004: asteroid_3
+    400006: asteroid_5
+    400008: asteroid_6
+    400010: asteroid_7
+    400012: asteroid_8
+    400014: //RootNode
+    2300000: asteroid_1
+    2300002: asteroid_2
+    2300004: asteroid_3
+    2300006: asteroid_5
+    2300008: asteroid_6
+    2300010: asteroid_7
+    2300012: asteroid_8
+    3300000: asteroid_1
+    3300002: asteroid_2
+    3300004: asteroid_3
+    3300006: asteroid_5
+    3300008: asteroid_6
+    3300010: asteroid_7
+    3300012: asteroid_8
+    4300000: asteroid_1
+    4300002: asteroid_2
+    4300004: asteroid_3
+    4300006: asteroid_5
+    4300008: asteroid_6
+    4300010: asteroid_7
+    4300012: asteroid_8
     9500000: //RootNode
   materials:
     importMaterials: 1

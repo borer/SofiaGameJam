@@ -18,6 +18,12 @@ public class BackgroundObjectGen : MonoBehaviour {
     public float m_verticalSpeedFactor = 0;
     private float m_verticalSpeed = 0;
     private float m_maxDistance = 0;
+    private GameObject m_player;
+
+    void Awake()
+    {
+        m_player = GameObject.FindGameObjectWithTag("Player");
+    }
     void Start () 
     {
         m_distance = 0;
@@ -53,10 +59,10 @@ public class BackgroundObjectGen : MonoBehaviour {
         return pos;
     }
 
-	void Update () 
+	void LateUpdate () 
     {
-        var player = GameObject.FindGameObjectWithTag("Player");
-        m_verticalSpeed = m_verticalSpeedFactor * player.GetComponent<MovementManager>().Speed;
+
+        m_verticalSpeed = m_verticalSpeedFactor * m_player.GetComponent<MovementManager>().Speed;
         if (Generate())
         {
             m_objects.Add(makeObject(caculatePos()));
@@ -64,9 +70,11 @@ public class BackgroundObjectGen : MonoBehaviour {
 
         for (int i = 0; i < m_objects.Count; i++)
         {
-            if(m_objects[i] == null)
-                m_objects.RemoveAt(i--);
+            if (m_objects[i] == null)
+            {
 
+                m_objects.RemoveAt(i--);
+            }
             else if (m_objects[i].transform.position.y < Camera.main.transform.position.y - 100)
             {
                 Destroy(m_objects[i]);
@@ -75,7 +83,7 @@ public class BackgroundObjectGen : MonoBehaviour {
             else
             {
                 Vector3 pos = m_objects[i].transform.position;
-                pos.y += m_verticalSpeed * Time.deltaTime;
+                pos.y += m_verticalSpeed * Time.smoothDeltaTime;
                 m_objects[i].transform.position = pos;
             }
         }
