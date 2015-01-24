@@ -20,13 +20,21 @@ public class CameraMover : MonoBehaviour {
 	
 	}
 
-    void Update() 
-    {
+    //public Vector3 distanceFromObject = new Vector3(0, 1, -1);
+    public Transform objectToFollow;
 
-        var pos = transform.position;
-        pos.y += m_speed * Time.deltaTime;
-        transform.position = pos;
-	}
+    void LateUpdate()
+    {
+        transform.position = new Vector3(transform.position.x, objectToFollow.position.y, transform.position.z) ;
+    }
+
+    //void Update() 
+    //{
+
+    //    var pos = transform.position;
+    //    pos.y += m_speed * Time.deltaTime;
+    //    transform.position = pos;
+    //}
 
     public float TopLimit(float distance)
     {
