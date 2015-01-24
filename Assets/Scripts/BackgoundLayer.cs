@@ -26,9 +26,6 @@ public class BackgoundLayer : MonoBehaviour {
         }
 
         m_offset = (maxY - minY) * go.transform.localScale.y;
-        Debug.Log(minY);
-        Debug.Log(maxY);
-
         m_planes.Add(go);
 	}
 	
