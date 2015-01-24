@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: dc2b16c372adc5a4da8961537781093b
+guid: a2a41a05c25d9a4498c2d4f30e8b4ab6
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
-    100000: Box46
+    100000: Box084
     100002: //RootNode
-    400000: Box46
+    400000: Box084
     400002: //RootNode
-    2300000: Box46
-    3300000: Box46
-    4300000: Box46
+    2300000: Box084
+    3300000: Box084
+    4300000: Box084
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -30,7 +30,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .100000001
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
