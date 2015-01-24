@@ -8,16 +8,6 @@ public class CameraMover : MonoBehaviour {
     
     void Start () 
     {
-
-        //for (int i = 0; i < 1000; i+=10)
-        //{
-        //    Vector3 pos = new Vector3(0, 0, i);
-        //    Instantiate(GameObject.CreatePrimitive(PrimitiveType.Cube), new Vector3(0, TopLimit(i), i), Quaternion.identity);
-        //    Instantiate(GameObject.CreatePrimitive(PrimitiveType.Cube), new Vector3(0, BottomLimit(i), i), Quaternion.identity);
-        //    Instantiate(GameObject.CreatePrimitive(PrimitiveType.Cube), new Vector3(LeftLimit(i), 0, i), Quaternion.identity);
-        //    Instantiate(GameObject.CreatePrimitive(PrimitiveType.Cube), new Vector3(RightLimit(i), 0, i), Quaternion.identity);
-        //}
-	
 	}
 
     //public Vector3 distanceFromObject = new Vector3(0, 1, -1);

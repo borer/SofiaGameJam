@@ -11,7 +11,7 @@ public class MovementManager : MonoBehaviour {
 	public float rotationSpeed = 20f;
 	public float randomTilt = 0.5f;
 	public float maxAngleRotation = 20f;
-	public float screenWidth = 20f;
+	public float screenWidth = .1f;
 
 	public Transform rotationPoint;
 
@@ -24,7 +24,9 @@ public class MovementManager : MonoBehaviour {
 	private bool rightButtonPressed = false;
 	private float movementDirection;
 	private float movementSpeed;
-	
+
+
+    public float Speed { get { return movementSpeed; } }
 	void Start() {
 		MinAngleRotation = maxAngleRotation; 
 		MaxAngleRotation = 360f - maxAngleRotation;
@@ -44,6 +46,7 @@ public class MovementManager : MonoBehaviour {
 	}
 
 	void Update() {
+        
 		getInput ();
 		float horizontalOffset = getHorizontalMovement();
 		float verticalOffset = getVericalMovement();
@@ -67,31 +70,36 @@ public class MovementManager : MonoBehaviour {
 	}
 
 	private void getInput() {
-		leftButtonPressed = Input.GetKey ("left");
-		rightButtonPressed = Input.GetKey ("right");
-		
-		if (leftButtonPressed) {
-			movementDirection += -.1f;
-		} else if (rightButtonPressed) {
-			movementDirection += .1f;
-		} else {
-			movementDirection = 0;
-		}
+
+        leftButtonPressed = Input.GetKey("left");
+        rightButtonPressed = Input.GetKey("right");
+        if (leftButtonPressed)
+        {
+            movementDirection += -.1f;
+        }
+        else if (rightButtonPressed)
+        {
+            movementDirection += .1f;
+        }
+        else
+        {
+            movementDirection = 0;
+        }
 	}
 
 	private void startRandomDrunkness() {
-		float isDrunk = Random.Range (-50f, 50f);
-		if (isDrunk > 49f && !drunkCoroutineStarted) {
+        float isDrunk = Random.Range(0.0f, 1.0f);
+		if (isDrunk > 0.5f && !drunkCoroutineStarted) {
 			StartCoroutine("drunknessRotation");
 		}
 	}
 
 	public IEnumerator drunknessRotation () {
 		drunkCoroutineStarted = true;
-		drunkRotation = Random.Range (-randomTilt, randomTilt);
+        drunkRotation = Random.Range(-randomTilt, randomTilt);
 		for (int i=0; i < 10; i++) {
 			yield return new WaitForSeconds (1f);
-			drunkRotation += 1.5f;
+            drunkRotation += 1.5f;
 		}
 		drunkCoroutineStarted = false;
 		drunkRotation = 0;
@@ -109,7 +117,8 @@ public class MovementManager : MonoBehaviour {
 	private float getHorizontalMovement() {
 		float offset = movementDirection * Time.deltaTime;
 		offset += transform.position.x;
-		float actualOffset = Mathf.Clamp (offset, -screenWidth / 2, screenWidth / 2);
+        float actualOffset = Mathf.Clamp(offset, -screenWidth / 2 + Camera.main.transform.position.x, 
+                                                            screenWidth / 2 + Camera.main.transform.position.x);
 		return actualOffset - transform.position.x;
 	}
 

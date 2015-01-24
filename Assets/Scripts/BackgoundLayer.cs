@@ -12,6 +12,7 @@ public class BackgoundLayer : MonoBehaviour {
     public float[] m_heights;
     private int m_heightIndex = 0;
     private float m_offset = 0;
+
 	void Start () 
     {
         var go = (GameObject)Instantiate(m_prefab, transform.position, Quaternion.identity);
@@ -35,8 +36,8 @@ public class BackgoundLayer : MonoBehaviour {
         var last = m_planes[m_planes.Count - 1];
 
         float size = last.transform.localScale.y;
-
-        if (last.transform.position.y + (size * MARGIN) / 2 < Camera.main.GetComponent<CameraMover>().TopLimit(0))
+        float top = Camera.main.transform.position.y + 25;
+        if (last.transform.position.y + (size * MARGIN) / 2 < top)
         {
             Vector3 offset = new Vector3(0, m_offset, 0);
 
