@@ -6,6 +6,6 @@ public class SceneGoMain : MonoBehaviour
 	
 	public void GoMainScene(string 	MainGameplay)
 	{
-		Application.LoadLevel("MainGameplay");
+        Application.LoadLevel("CutScene_1");
 	}
 }

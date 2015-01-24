@@ -4,7 +4,7 @@ using System.Collections;
 public class CutSceneController : MonoBehaviour
 {
 
-    public int m_animTime = 8;
+    public float m_animTime = 8;
     public string m_nextScene;
 	void Start () {
         StartCoroutine(WaitForAnimation());
