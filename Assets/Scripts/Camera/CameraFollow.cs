@@ -12,9 +12,12 @@ public class CameraFollow : MonoBehaviour {
     private Vector3 m_delta;
     private const float MIN_DISTANCE_FACTOR = 0.1f;
     public string m_cutSceneName = "TempScene";
+    public float m_startY;
+    public int m_direction = 1;
     void Start()
     {
         m_lastPos = transform.position;
+        m_startY = transform.position.y;
     }
 
     void Update()
@@ -29,10 +32,10 @@ public class CameraFollow : MonoBehaviour {
 
         var pos = transform.position;
         var playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
-        transform.position = new Vector3(pos.x, playerPos.y + 1.1f, pos.z);
+        transform.position = new Vector3(pos.x, playerPos.y + m_direction * 1.1f, pos.z);
 
         var ast = GameObject.FindGameObjectWithTag("Asteroid");
-        if (ast.transform.position.y - transform.position.y < MIN_DISTANCE_FACTOR * ast.transform.position.y)
+        if (Mathf.Abs(ast.transform.position.y - transform.position.y) < MIN_DISTANCE_FACTOR * Mathf.Abs(ast.transform.position.y - m_startY))
             Application.LoadLevel(m_cutSceneName);
     }
 
