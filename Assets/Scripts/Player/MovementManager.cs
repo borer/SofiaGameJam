@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+
 
 public class MovementManager : MonoBehaviour {
 	public float startSpeed = 3f;
@@ -35,6 +37,8 @@ public class MovementManager : MonoBehaviour {
     private int count;
     private bool isJumpPerformed;
     public int m_direction = 1;
+    //private List<GameObject> m_particles = new  List<GameObject>();
+
 
 	void Start() {        
         cameraAnimController = Camera.main.GetComponent<CameraAnimationController> ();
@@ -53,14 +57,18 @@ public class MovementManager : MonoBehaviour {
 			cameraAnimController.playerCollectedBooster();
 			animationController.SetBool ("BoosterHit", true);
 			GameObject instance = CFX_SpawnSystem.GetNextObject(boosterParticlePrefab.gameObject);
-			instance.transform.position = transform.position + Vector3.up * 2;
+			instance.transform.position = transform.position;
+            instance.transform.parent = transform;
+            //m_particles.Add(instance);
 		}
 
 		if (other.CompareTag ("Fucker")) {
 			movementSpeed += fuckerSpeed;
 			animationController.SetBool ("FuckerHit", true);
 			GameObject instance = CFX_SpawnSystem.GetNextObject(fuckerParticlePrefab.gameObject);
-            instance.transform.position = transform.position + Vector3.up * 2;
+            instance.transform.position = transform.position;
+            instance.transform.parent = transform;
+           // m_particles.Add(instance);
 		} 
 
 		Destroy(other.gameObject);
@@ -85,6 +93,13 @@ public class MovementManager : MonoBehaviour {
         }
 
 
+        //for (int i = 0; i < m_particles.Count; i++)
+        //{
+        //    if (m_particles[i] == null)
+        //        m_particles.RemoveAt(i--);
+        //    else
+        //        m_particles[i].transform.Translate(0, m_direction * Speed * 0.8f, 0);
+        //}
 
 		getInput ();
 		float horizontalOffset = getHorizontalMovement();
