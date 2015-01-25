@@ -7,13 +7,13 @@ public class Scores : MonoBehaviour {
 	public Transform player;
 
 	private Text scoreText;
-	private float count;
+    private float highestSpeed = 0;
 	void Start () {
 		scoreText = GetComponent<Text>();
 	}
 	
 	void Update () {
-		count++;
-		scoreText.text = "" + count;
+        highestSpeed = Mathf.Max(GameObject.FindGameObjectWithTag("Player").GetComponent<MovementManager>().Speed);
+		scoreText.text = "" + highestSpeed;
 	}
 }
