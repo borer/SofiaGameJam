@@ -17,8 +17,6 @@ public class BonusGeneration : BackgroundObjectGen {
         pos.y += m_generationOffset;
         pos.z = transform.position.z;
         pos.x += Random.Range(m_leftLimit, m_rightLimit);
-
-        Debug.Log(pos);
         return pos;
     }
 

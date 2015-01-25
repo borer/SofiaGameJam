@@ -19,6 +19,7 @@ public class BackgroundObjectGen : MonoBehaviour {
     private float m_verticalSpeed = 0;
     private float m_maxDistance = 0;
     private GameObject m_player;
+    public int m_direction = 1;
 
     void Awake()
     {
@@ -35,13 +36,13 @@ public class BackgroundObjectGen : MonoBehaviour {
         float pos = Camera.main.transform.position.y / m_maxDistance;
         if (pos < m_begin || pos > m_end)
             return false;
-        m_distance -= Camera.main.GetComponent<CameraFollow>().DeltaPos.y;
+        m_distance -= Mathf.Abs(Camera.main.GetComponent<CameraFollow>().DeltaPos.y);
         m_distance += m_verticalSpeed;
         bool shouldGenerate = m_distance < 0;
 
         if (shouldGenerate)
         {
-            m_distance = Mathf.Lerp(m_endInterval, m_startInterval, Mathf.Clamp01((m_end - (m_begin + pos)) / (m_end - m_begin)));
+            m_distance = Mathf.Lerp(m_startInterval, m_endInterval, Mathf.Clamp01((m_end - (m_begin + pos)) / (m_end - m_begin)));
         }
         return shouldGenerate;
     }
@@ -54,7 +55,7 @@ public class BackgroundObjectGen : MonoBehaviour {
     protected virtual Vector3 caculatePos()
     {
         Vector3 pos = Camera.main.transform.position;
-        pos.y += m_generationOffset;
+        pos.y += m_direction *  m_generationOffset;
         pos.z = transform.position.z - 3;
         pos.x += Random.Range(m_leftLimit, m_rightLimit);
         return pos;
@@ -75,7 +76,7 @@ public class BackgroundObjectGen : MonoBehaviour {
 
                 m_objects.RemoveAt(i--);
             }
-            else if (m_objects[i].transform.position.y < Camera.main.transform.position.y - 100)
+            else if (m_objects[i].transform.position.y < Camera.main.transform.position.y - m_direction * 100)
             {
                 Destroy(m_objects[i]);
                 m_objects.RemoveAt(i--);

@@ -440,7 +440,7 @@ Transform:
   m_Children:
   - {fileID: 1528550639}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
 --- !u!95 &37076810
 Animator:
   serializedVersion: 3
@@ -1835,7 +1835,7 @@ Transform:
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!1 &335595090
 GameObject:
   m_ObjectHideFlags: 0
@@ -5749,7 +5749,7 @@ Transform:
   m_Children:
   - {fileID: 1517886088}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
 --- !u!1 &1239650861
 GameObject:
   m_ObjectHideFlags: 0
@@ -6425,7 +6425,7 @@ Transform:
   m_Children:
   - {fileID: 341734089}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!1 &1393781723
 GameObject:
   m_ObjectHideFlags: 0
@@ -8964,7 +8964,7 @@ Transform:
   - {fileID: 1266027673}
   - {fileID: 113459683}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 9
 --- !u!1 &1730174195
 GameObject:
   m_ObjectHideFlags: 0
