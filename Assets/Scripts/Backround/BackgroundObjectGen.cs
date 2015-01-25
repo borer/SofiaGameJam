@@ -41,7 +41,7 @@ public class BackgroundObjectGen : MonoBehaviour {
 
         if (shouldGenerate)
         {
-            m_distance = Mathf.Lerp(m_endInterval, m_startInterval, Mathf.Clamp01((m_end - (m_begin + pos)) / (m_end - m_begin)));
+            m_distance = Mathf.Lerp(m_startInterval, m_endInterval, Mathf.Clamp01((m_end - (m_begin + pos)) / (m_end - m_begin)));
         }
         return shouldGenerate;
     }

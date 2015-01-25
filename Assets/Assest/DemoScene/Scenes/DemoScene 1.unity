@@ -943,14 +943,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startSpeed: 3
   minSoberSpeed: 10
-  maxFullyDrunkSpeed: 20
-  slowingFactor: .5
-  boosterSpeed: 5
-  fuckerSpeed: -3
-  rotationSpeed: 10
-  randomTilt: .100000001
+  maxFullyDrunkSpeed: 50
+  slowingFactor: .100000001
+  boosterSpeed: 10
+  fuckerSpeed: -10
+  rotationSpeed: 20
+  randomTilt: 2
   maxRotationDiference: 20
-  screenWidth: 20
+  screenWidth: 5
   model: {fileID: 1232660563}
   rotationPoint: {fileID: 2101700528}
   fuckerParticlePrefab: {fileID: 400004, guid: e463141fb849fa84eba84b8688640df4, type: 2}
@@ -1997,6 +1997,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 21
       objectReference: {fileID: 0}
+    - target: {fileID: 11493198, guid: 286988401453dc5468b0b13fd1e58213, type: 2}
+      propertyPath: m_startInterval
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 11493198, guid: 286988401453dc5468b0b13fd1e58213, type: 2}
+      propertyPath: m_endInterval
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 11493194, guid: 286988401453dc5468b0b13fd1e58213, type: 2}
+      propertyPath: m_startInterval
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11493194, guid: 286988401453dc5468b0b13fd1e58213, type: 2}
+      propertyPath: m_endInterval
+      value: .00999999978
+      objectReference: {fileID: 0}
+    - target: {fileID: 11493194, guid: 286988401453dc5468b0b13fd1e58213, type: 2}
+      propertyPath: m_verticalSpeedFactor
+      value: .899999976
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 286988401453dc5468b0b13fd1e58213, type: 2}
   m_RootGameObject: {fileID: 1768640808}
@@ -2821,7 +2841,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11416822, guid: 1db5dd675f916a34f914a1907065bc3e, type: 2}
       propertyPath: maxFullyDrunkSpeed
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6516822, guid: 1db5dd675f916a34f914a1907065bc3e, type: 2}
       propertyPath: m_Size.z
@@ -2838,6 +2858,30 @@ Prefab:
     - target: {fileID: 11416822, guid: 1db5dd675f916a34f914a1907065bc3e, type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11416822, guid: 1db5dd675f916a34f914a1907065bc3e, type: 2}
+      propertyPath: screenWidth
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11416822, guid: 1db5dd675f916a34f914a1907065bc3e, type: 2}
+      propertyPath: slowingFactor
+      value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 11416822, guid: 1db5dd675f916a34f914a1907065bc3e, type: 2}
+      propertyPath: boosterSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11416822, guid: 1db5dd675f916a34f914a1907065bc3e, type: 2}
+      propertyPath: fuckerSpeed
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11416822, guid: 1db5dd675f916a34f914a1907065bc3e, type: 2}
+      propertyPath: rotationSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11416822, guid: 1db5dd675f916a34f914a1907065bc3e, type: 2}
+      propertyPath: randomTilt
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1db5dd675f916a34f914a1907065bc3e, type: 2}
@@ -3120,7 +3164,7 @@ Transform:
   m_PrefabInternal: {fileID: 1335949079}
   m_GameObject: {fileID: 886621130}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.3499999, y: 100, z: -33.5999985}
+  m_LocalPosition: {x: -5.3499999, y: 1000, z: -33.5999985}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3460,6 +3504,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11426696, guid: 74ddf2b0bdb0ba04994fb0c76628cd15, type: 2}
+      propertyPath: m_prefabs.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 426696, guid: 74ddf2b0bdb0ba04994fb0c76628cd15, type: 2}
       propertyPath: m_LocalPosition.x
       value: -5.3499999
@@ -3491,6 +3539,30 @@ Prefab:
     - target: {fileID: 426696, guid: 74ddf2b0bdb0ba04994fb0c76628cd15, type: 2}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11426696, guid: 74ddf2b0bdb0ba04994fb0c76628cd15, type: 2}
+      propertyPath: m_prefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 105432, guid: 6a446a0cb763856439f05416af5ba7c7, type: 2}
+    - target: {fileID: 11426696, guid: 74ddf2b0bdb0ba04994fb0c76628cd15, type: 2}
+      propertyPath: m_prefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 184478, guid: 73face3404e4ff840920793eccce4fca, type: 2}
+    - target: {fileID: 11426696, guid: 74ddf2b0bdb0ba04994fb0c76628cd15, type: 2}
+      propertyPath: m_prefabs.Array.data[5]
+      value: 
+      objectReference: {fileID: 122974, guid: 31201cc2c174cb7468a4fae093c8ffdd, type: 2}
+    - target: {fileID: 11426694, guid: 74ddf2b0bdb0ba04994fb0c76628cd15, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11426696, guid: 74ddf2b0bdb0ba04994fb0c76628cd15, type: 2}
+      propertyPath: m_startInterval
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11426696, guid: 74ddf2b0bdb0ba04994fb0c76628cd15, type: 2}
+      propertyPath: m_endInterval
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 74ddf2b0bdb0ba04994fb0c76628cd15, type: 2}
@@ -5242,7 +5314,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 425772, guid: ca89f5865276ac3469b60209e7add151, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 100
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 425772, guid: ca89f5865276ac3469b60209e7add151, type: 2}
       propertyPath: m_LocalPosition.z
@@ -6453,7 +6525,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1063060990}
   m_GameObject: {fileID: 1706508506}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5681896502cc60e419d407ddf2d942a8, type: 3}
   m_Name: 
@@ -6486,12 +6558,15 @@ MonoBehaviour:
   m_leftLimit: -4
   m_rightLimit: 4
   m_generationOffset: 5
-  m_startInterval: 1.5
-  m_endInterval: 1.5
+  m_startInterval: 1
+  m_endInterval: 1
   m_prefabs:
   - {fileID: 149906, guid: 469859cf46bac9643aa498601ceed595, type: 2}
   - {fileID: 132208, guid: 9352965807bf1d0448dc902a9e689f2c, type: 2}
   - {fileID: 155952, guid: dc8ad908f63d62a44b03b1419e8ce215, type: 2}
+  - {fileID: 105432, guid: 6a446a0cb763856439f05416af5ba7c7, type: 2}
+  - {fileID: 184478, guid: 73face3404e4ff840920793eccce4fca, type: 2}
+  - {fileID: 122974, guid: 31201cc2c174cb7468a4fae093c8ffdd, type: 2}
   m_begin: 0
   m_end: 1.20000005
   m_interval: 10
@@ -6714,6 +6789,7 @@ GameObject:
   - 114: {fileID: 1768640809}
   - 114: {fileID: 1768640813}
   - 114: {fileID: 1768640814}
+  - 114: {fileID: 1768640815}
   m_Layer: 0
   m_Name: BackgourndGen
   m_TagString: Untagged
@@ -6736,14 +6812,14 @@ MonoBehaviour:
   m_leftLimit: -20
   m_rightLimit: 20
   m_generationOffset: 25
-  m_startInterval: 10
-  m_endInterval: 50
+  m_startInterval: .5
+  m_endInterval: .00999999978
   m_prefabs:
   - {fileID: 150982, guid: 63db5aa319be6074788508be6adb068b, type: 2}
   m_begin: .5
   m_end: 1
   m_interval: 10
-  m_verticalSpeedFactor: 0
+  m_verticalSpeedFactor: .899999976
 --- !u!114 &1768640810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6862,6 +6938,28 @@ MonoBehaviour:
   m_end: 1
   m_interval: 1
   m_verticalSpeedFactor: 0
+--- !u!114 &1768640815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1768640808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad417a1fc917bb8409d3128aac614d99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_leftLimit: -10
+  m_rightLimit: 0
+  m_generationOffset: 25
+  m_startInterval: 200
+  m_endInterval: 200
+  m_prefabs:
+  - {fileID: 142958, guid: 7d1fabffaa6d61f49844085bf38cff8a, type: 2}
+  m_begin: .400000006
+  m_end: 1
+  m_interval: 10
+  m_verticalSpeedFactor: .899999976
 --- !u!1 &1784068109
 GameObject:
   m_ObjectHideFlags: 0

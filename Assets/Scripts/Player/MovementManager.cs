@@ -112,8 +112,8 @@ public class MovementManager : MonoBehaviour {
 		animationController.SetBool ("BoosterHit", false);
 		animationController.SetBool ("PlayerInput", moving);
 		animationController.SetFloat ("drunkRotation", rotationOffset);
-        
-		float movementBonus = Mathf.Sign (horizontalOffset) * Mathf.Abs(verticalOffset) *  0.1f;
+
+        float movementBonus = 0;// Mathf.Sign(horizontalOffset) * Mathf.Abs(verticalOffset) * 0.1f;
 		horizontalOffset = moving ? horizontalOffset + movementBonus : horizontalOffset;
 		transform.Translate (new Vector3 (horizontalOffset, verticalOffset, 0), Space.World);
 
@@ -122,6 +122,7 @@ public class MovementManager : MonoBehaviour {
 	private void getInput() {
         float speed = Input.GetAxis("Horizontal");
 		moving = Mathf.Abs(speed) > 0;
+        Debug.Log(speed);
         movementDirection  = speed;
 	}
 

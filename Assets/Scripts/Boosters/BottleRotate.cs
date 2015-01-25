@@ -7,7 +7,7 @@ public class BottleRotate : MonoBehaviour {
 	void Start () {
 	
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
         transform.localRotation *= Quaternion.AngleAxis(m_speed * Time.smoothDeltaTime, Vector3.right);
