@@ -2755,7 +2755,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_animTime: 4
-  m_nextScene: CutScene_1
+  m_nextScene: DemoScene 2
 --- !u!4 &1690286422
 Transform:
   m_ObjectHideFlags: 0

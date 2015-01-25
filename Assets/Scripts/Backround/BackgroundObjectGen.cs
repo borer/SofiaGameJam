@@ -20,6 +20,7 @@ public class BackgroundObjectGen : MonoBehaviour {
     private float m_maxDistance = 0;
     private GameObject m_player;
     public int m_direction = 1;
+    private float m_asteroidPos;
 
     void Awake()
     {
@@ -27,21 +28,24 @@ public class BackgroundObjectGen : MonoBehaviour {
     }
     void Start () 
     {
-        m_distance = 0;
-        m_maxDistance = GameObject.FindGameObjectWithTag("Asteroid").transform.position.y;
+        m_distance = 0;        
+        m_asteroidPos = GameObject.FindGameObjectWithTag("Asteroid").transform.position.y;
+        m_maxDistance = Mathf.Abs(m_asteroidPos - Camera.main.transform.position.y);
 	}
-
+   
     protected virtual bool Generate()
     {
-        float pos = Camera.main.transform.position.y / m_maxDistance;
+        float pos = 1.0f -  Mathf.Abs(Camera.main.transform.position.y - m_asteroidPos)/ m_maxDistance;
+
         if (pos < m_begin || pos > m_end)
             return false;
+
         m_distance -= Mathf.Abs(Camera.main.GetComponent<CameraFollow>().DeltaPos.y);
-        m_distance += m_verticalSpeed;
+        m_distance += Mathf.Abs(m_verticalSpeed);
         bool shouldGenerate = m_distance < 0;
 
         if (shouldGenerate)
-        {
+        {            
             m_distance = Mathf.Lerp(m_startInterval, m_endInterval, Mathf.Clamp01((m_end - (m_begin + pos)) / (m_end - m_begin)));
         }
         return shouldGenerate;
@@ -55,7 +59,7 @@ public class BackgroundObjectGen : MonoBehaviour {
     protected virtual Vector3 caculatePos()
     {
         Vector3 pos = Camera.main.transform.position;
-        pos.y += m_direction *  m_generationOffset;
+        pos.y += m_generationOffset;
         pos.z = transform.position.z - 3;
         pos.x += Random.Range(m_leftLimit, m_rightLimit);
         return pos;
@@ -73,10 +77,10 @@ public class BackgroundObjectGen : MonoBehaviour {
         {
             if (m_objects[i] == null)
             {
-
                 m_objects.RemoveAt(i--);
             }
-            else if (m_objects[i].transform.position.y < Camera.main.transform.position.y - m_direction * 100)
+            else if ((m_direction > 0 && m_objects[i].transform.position.y < Camera.main.transform.position.y - m_direction * 100) ||
+                      (m_direction < 0 && m_objects[i].transform.position.y > Camera.main.transform.position.y - m_direction * 100))
             {
                 Destroy(m_objects[i]);
                 m_objects.RemoveAt(i--);
