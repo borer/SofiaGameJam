@@ -14,6 +14,6 @@ public class Scores : MonoBehaviour {
 	
 	void Update () {
         highestSpeed = Mathf.Max(highestSpeed, GameObject.FindGameObjectWithTag("Player").GetComponent<MovementManager>().Speed);
-		scoreText.text = "" + highestSpeed;
+		scoreText.text = "" + (int)highestSpeed;
 	}
 }
