@@ -30,7 +30,6 @@ public class BackgoundLayer : MonoBehaviour {
         m_planes.Add(go);
 
         m_maxDistance = GameObject.FindGameObjectWithTag("Asteroid").transform.position.y;
-        Debug.Log(m_maxDistance);
 	}
 	
 	// Update is called once per frame

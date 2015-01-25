@@ -31,7 +31,7 @@ public class MovementManager : MonoBehaviour {
 	private Animator animationController;
     static int jumpState = Animator.StringToHash("Take 001");
 	private CameraAnimationController cameraAnimController;
-
+    private float maximumSpeed = 0;
     private int count;
     private bool isJumpPerformed;
 
@@ -46,7 +46,7 @@ public class MovementManager : MonoBehaviour {
 
 
 	void OnTriggerEnter(Collider other) {
-        Debug.Log("Enter!!!");
+        //Debug.Log("Enter!!!");
 		if (other.CompareTag ("Booster")) {
 			movementSpeed += boosterSpeed;
 			cameraAnimController.playerCollectedBooster();
@@ -100,7 +100,6 @@ public class MovementManager : MonoBehaviour {
 
             if (moving)
             {
-				Debug.Log(currentRotationAngle);
 				Quaternion UProtation = Quaternion.LookRotation(Vector3.forward);
 				transform.rotation = Quaternion.Slerp(transform.rotation, UProtation, movementDirection * rotationOffset);
 			} else {
@@ -117,12 +116,14 @@ public class MovementManager : MonoBehaviour {
 		horizontalOffset = moving ? horizontalOffset + movementBonus : horizontalOffset;
 		transform.Translate (new Vector3 (horizontalOffset, verticalOffset, 0), Space.World);
 
+
+        maximumSpeed = Mathf.Max(maximumSpeed, Speed);
+        Debug.Log(maximumSpeed);
 	}
 
 	private void getInput() {
         float speed = Input.GetAxis("Horizontal");
 		moving = Mathf.Abs(speed) > 0;
-        Debug.Log(speed);
         movementDirection  = speed;
 	}
 

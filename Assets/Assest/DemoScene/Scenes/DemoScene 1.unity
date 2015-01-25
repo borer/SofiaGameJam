@@ -943,7 +943,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startSpeed: 3
   minSoberSpeed: 10
-  maxFullyDrunkSpeed: 50
+  maxFullyDrunkSpeed: 999
   slowingFactor: .100000001
   boosterSpeed: 10
   fuckerSpeed: -10
@@ -2841,7 +2841,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11416822, guid: 1db5dd675f916a34f914a1907065bc3e, type: 2}
       propertyPath: maxFullyDrunkSpeed
-      value: 50
+      value: 999
       objectReference: {fileID: 0}
     - target: {fileID: 6516822, guid: 1db5dd675f916a34f914a1907065bc3e, type: 2}
       propertyPath: m_Size.z
@@ -3164,7 +3164,7 @@ Transform:
   m_PrefabInternal: {fileID: 1335949079}
   m_GameObject: {fileID: 886621130}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.3499999, y: 1000, z: -33.5999985}
+  m_LocalPosition: {x: -5.3499999, y: 2000, z: -33.5999985}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5314,7 +5314,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 425772, guid: ca89f5865276ac3469b60209e7add151, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1000
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 425772, guid: ca89f5865276ac3469b60209e7add151, type: 2}
       propertyPath: m_LocalPosition.z
