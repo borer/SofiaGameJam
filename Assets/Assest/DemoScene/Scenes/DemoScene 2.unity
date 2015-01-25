@@ -1091,7 +1091,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Score
+  m_Text: Max Speed
 --- !u!222 &692697862
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1751,6 +1751,14 @@ Prefab:
       propertyPath: m_generationOffset
       value: -5
       objectReference: {fileID: 0}
+    - target: {fileID: 11426696, guid: 74ddf2b0bdb0ba04994fb0c76628cd15, type: 2}
+      propertyPath: m_leftLimit
+      value: -3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11426696, guid: 74ddf2b0bdb0ba04994fb0c76628cd15, type: 2}
+      propertyPath: m_rightLimit
+      value: 3.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 74ddf2b0bdb0ba04994fb0c76628cd15, type: 2}
   m_RootGameObject: {fileID: 1706508506}
@@ -1908,6 +1916,10 @@ Prefab:
     - target: {fileID: 22425950, guid: 466ce96ec27b42847adf3dfe6ac7978f, type: 2}
       propertyPath: m_AnchoredPosition.y
       value: -57
+      objectReference: {fileID: 0}
+    - target: {fileID: 11404410, guid: 466ce96ec27b42847adf3dfe6ac7978f, type: 2}
+      propertyPath: m_Text
+      value: Max Speed
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 466ce96ec27b42847adf3dfe6ac7978f, type: 2}
@@ -2662,8 +2674,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5681896502cc60e419d407ddf2d942a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_leftLimit: -4
-  m_rightLimit: 4
+  m_leftLimit: -3.5
+  m_rightLimit: 3.5
   m_generationOffset: -5
   m_startInterval: 2
   m_endInterval: 2
@@ -2957,7 +2969,7 @@ MonoBehaviour:
   m_begin: .200000003
   m_end: .400000006
   m_interval: 10
-  m_verticalSpeedFactor: .5
+  m_verticalSpeedFactor: .800000012
   m_direction: -1
 --- !u!1 &1833156177
 GameObject:

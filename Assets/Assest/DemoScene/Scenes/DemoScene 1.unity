@@ -3629,6 +3629,14 @@ Prefab:
       propertyPath: m_endInterval
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11426696, guid: 74ddf2b0bdb0ba04994fb0c76628cd15, type: 2}
+      propertyPath: m_rightLimit
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11426696, guid: 74ddf2b0bdb0ba04994fb0c76628cd15, type: 2}
+      propertyPath: m_leftLimit
+      value: -3.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 74ddf2b0bdb0ba04994fb0c76628cd15, type: 2}
   m_RootGameObject: {fileID: 1706508506}
@@ -6994,8 +7002,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5681896502cc60e419d407ddf2d942a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_leftLimit: -4
-  m_rightLimit: 4
+  m_leftLimit: -3.5
+  m_rightLimit: 3.5
   m_generationOffset: 5
   m_startInterval: 2
   m_endInterval: 2
