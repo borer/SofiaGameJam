@@ -7,4 +7,9 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/DemoScene.unity
-
+  - enabled: 1
+    path: Assets/Assest/DemoScene/Scenes/CutScene_2.unity
+  - enabled: 1
+    path: Assets/Assest/DemoScene/Scenes/CutScene_1.unity
+  - enabled: 1
+    path: Assets/Assest/DemoScene/Scenes/DemoScene 1.unity

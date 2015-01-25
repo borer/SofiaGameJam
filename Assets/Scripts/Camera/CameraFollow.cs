@@ -21,14 +21,19 @@ public class CameraFollow : MonoBehaviour {
     {
         m_delta = transform.position - m_lastPos;
         m_lastPos = transform.position;
+        
     }
 
     void LateUpdate()
     {
-        transform.position = new Vector3(transform.position.x, objectToFollow.position.y + 1, transform.position.z);
-        //var ast = GameObject.FindGameObjectWithTag("Asteroid");
-        //if (ast.transform.position.y - transform.position.y < MIN_DISTANCE_FACTOR * ast.transform.position.y)
-        //    Application.LoadLevel(m_cutSceneName);
+
+        var pos = transform.position;
+        var playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
+        transform.position = new Vector3(pos.x, playerPos.y, pos.z);
+
+        var ast = GameObject.FindGameObjectWithTag("Asteroid");
+        if (ast.transform.position.y - transform.position.y < MIN_DISTANCE_FACTOR * ast.transform.position.y)
+            Application.LoadLevel(m_cutSceneName);
     }
 
 

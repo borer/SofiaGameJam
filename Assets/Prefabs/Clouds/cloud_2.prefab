@@ -1,15 +1,15 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &168992
+--- !u!1 &113564
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 468992}
-  - 33: {fileID: 3368992}
-  - 23: {fileID: 2368992}
+  - 4: {fileID: 413564}
+  - 33: {fileID: 3313564}
+  - 23: {fileID: 2313564}
   m_Layer: 0
   m_Name: cloud_2
   m_TagString: Untagged
@@ -17,24 +17,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &468992
+--- !u!4 &413564
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 168992}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .349999994, y: 1.59000003, z: 2.1500001}
+  m_GameObject: {fileID: 113564}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.21000004, y: 3.73000002, z: -5.96000004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &2368992
+--- !u!23 &2313564
 Renderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 168992}
+  m_GameObject: {fileID: 113564}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -49,12 +49,12 @@ Renderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &3368992
+--- !u!33 &3313564
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 168992}
+  m_GameObject: {fileID: 113564}
   m_Mesh: {fileID: 4300000, guid: d1e2f02bf7cebe14b9a58eacf90d6038, type: 3}
 --- !u!1001 &100100000
 Prefab:
@@ -65,6 +65,6 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 168992}
+  m_RootGameObject: {fileID: 113564}
   m_IsPrefabParent: 1
   m_IsExploded: 1

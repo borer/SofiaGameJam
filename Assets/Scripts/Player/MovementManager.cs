@@ -29,37 +29,62 @@ public class MovementManager : MonoBehaviour {
     public float Speed { get { return movementSpeed; } }
 
 	private Animator animationController;
+    static int jumpState = Animator.StringToHash("Take 001");
 	private CameraAnimationController cameraAnimController;
 
-	void Start() {
-		cameraAnimController = Camera.main.GetComponent<CameraAnimationController> ();
+    private int count;
+    private bool isJumpPerformed;
+
+	void Start() {        
+        cameraAnimController = Camera.main.GetComponent<CameraAnimationController> ();
 		animationController = model.gameObject.GetComponent<Animator> ();
 		minAngleRotation = maxRotationDiference; 
 		maxAngleRotation = 360f - maxRotationDiference;
 		movementSpeed = startSpeed;
+        StartCoroutine("waitForJump");
 	}
 
+
 	void OnTriggerEnter(Collider other) {
+        Debug.Log("Enter!!!");
 		if (other.CompareTag ("Booster")) {
 			movementSpeed += boosterSpeed;
 			cameraAnimController.playerCollectedBooster();
 			animationController.SetBool ("BoosterHit", true);
 			GameObject instance = CFX_SpawnSystem.GetNextObject(boosterParticlePrefab.gameObject);
-			instance.transform.position = transform.position;
+			instance.transform.position = transform.position + Vector3.up * 2;
 		}
 
 		if (other.CompareTag ("Fucker")) {
 			movementSpeed += fuckerSpeed;
 			animationController.SetBool ("FuckerHit", true);
 			GameObject instance = CFX_SpawnSystem.GetNextObject(fuckerParticlePrefab.gameObject);
-			instance.transform.position = transform.position;
+            instance.transform.position = transform.position + Vector3.up * 2;
 		} 
 
 		Destroy(other.gameObject);
 	}
 
+    public IEnumerator waitForJump() {
+
+        isJumpPerformed = false;
+        yield return new WaitForSeconds(0.59f);
+        isJumpPerformed = true;
+    }
+
 	void Update() {
-        
+
+        //if (animationController.GetCurrentAnimatorStateInfo(0).nameHash == jumpState)
+        //{
+        //    return;
+        //}
+        if (!isJumpPerformed)
+        {
+            return;
+        }
+
+
+
 		getInput ();
 		float horizontalOffset = getHorizontalMovement();
 		float verticalOffset = getVericalMovement();
@@ -87,10 +112,11 @@ public class MovementManager : MonoBehaviour {
 		animationController.SetBool ("BoosterHit", false);
 		animationController.SetBool ("PlayerInput", moving);
 		animationController.SetFloat ("drunkRotation", rotationOffset);
-
-		float movementBonus = Mathf.Sign (horizontalOffset) * Mathf.Abs(verticalOffset);
+        
+		float movementBonus = Mathf.Sign (horizontalOffset) * Mathf.Abs(verticalOffset) *  0.1f;
 		horizontalOffset = moving ? horizontalOffset + movementBonus : horizontalOffset;
 		transform.Translate (new Vector3 (horizontalOffset, verticalOffset, 0), Space.World);
+
 	}
 
 	private void getInput() {
