@@ -1312,7 +1312,7 @@ Transform:
   m_Children:
   - {fileID: 854553501}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
 --- !u!95 &212765817
 Animator:
   serializedVersion: 3
@@ -8964,7 +8964,7 @@ Transform:
   - {fileID: 1266027673}
   - {fileID: 113459683}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
 --- !u!1 &1730174195
 GameObject:
   m_ObjectHideFlags: 0
@@ -10859,6 +10859,7 @@ GameObject:
   - 124: {fileID: 1966006571}
   - 81: {fileID: 1966006570}
   - 95: {fileID: 1966006575}
+  - 114: {fileID: 1966006576}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -10946,6 +10947,29 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &1966006576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1966006569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bef3d242a13c447ac90c2d2dc213b1ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mode: 0
+  intensity: 5
+  chromaticAberration: .200000003
+  axialAberration: .5
+  blur: .5
+  blurSpread: .5
+  luminanceDependency: .25
+  blurDistance: 2.5
+  vignetteShader: {fileID: 4800000, guid: 627943dc7a9a74286b70a4f694a0acd5, type: 3}
+  separableBlurShader: {fileID: 4800000, guid: e97c14fbb5ea04c3a902cc533d7fc5d1, type: 3}
+  chromAberrationShader: {fileID: 4800000, guid: 2b4f29398d9484ccfa9fd220449f5eee,
+    type: 3}
 --- !u!1 &1994664247
 GameObject:
   m_ObjectHideFlags: 0
