@@ -2030,6 +2030,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11493196, guid: 286988401453dc5468b0b13fd1e58213, type: 2}
+      propertyPath: m_prefabs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 401044, guid: 286988401453dc5468b0b13fd1e58213, type: 2}
       propertyPath: m_LocalPosition.x
       value: -33.7000008
@@ -2081,6 +2085,22 @@ Prefab:
     - target: {fileID: 11493194, guid: 286988401453dc5468b0b13fd1e58213, type: 2}
       propertyPath: m_verticalSpeedFactor
       value: .899999976
+      objectReference: {fileID: 0}
+    - target: {fileID: 11493196, guid: 286988401453dc5468b0b13fd1e58213, type: 2}
+      propertyPath: m_prefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 136440, guid: 2c17568bb791f5e4c8883d314ea059b4, type: 2}
+    - target: {fileID: 11493196, guid: 286988401453dc5468b0b13fd1e58213, type: 2}
+      propertyPath: m_end
+      value: .800000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 11493196, guid: 286988401453dc5468b0b13fd1e58213, type: 2}
+      propertyPath: m_leftLimit
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11493196, guid: 286988401453dc5468b0b13fd1e58213, type: 2}
+      propertyPath: m_rightLimit
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 286988401453dc5468b0b13fd1e58213, type: 2}
@@ -3623,11 +3643,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11426696, guid: 74ddf2b0bdb0ba04994fb0c76628cd15, type: 2}
       propertyPath: m_startInterval
-      value: 2
+      value: 1.79999995
       objectReference: {fileID: 0}
     - target: {fileID: 11426696, guid: 74ddf2b0bdb0ba04994fb0c76628cd15, type: 2}
       propertyPath: m_endInterval
-      value: 2
+      value: 1.79999995
+      objectReference: {fileID: 0}
+    - target: {fileID: 11426696, guid: 74ddf2b0bdb0ba04994fb0c76628cd15, type: 2}
+      propertyPath: m_rightLimit
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11426696, guid: 74ddf2b0bdb0ba04994fb0c76628cd15, type: 2}
+      propertyPath: m_leftLimit
+      value: -3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 74ddf2b0bdb0ba04994fb0c76628cd15, type: 2}
@@ -6994,11 +7022,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5681896502cc60e419d407ddf2d942a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_leftLimit: -4
-  m_rightLimit: 4
+  m_leftLimit: -3
+  m_rightLimit: 3
   m_generationOffset: 5
-  m_startInterval: 2
-  m_endInterval: 2
+  m_startInterval: 1.79999995
+  m_endInterval: 1.79999995
   m_prefabs:
   - {fileID: 149906, guid: 469859cf46bac9643aa498601ceed595, type: 2}
   - {fileID: 132208, guid: 9352965807bf1d0448dc902a9e689f2c, type: 2}
@@ -7476,15 +7504,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f81853fa9a0ef7a448ba4f9500b2914e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_leftLimit: -30
-  m_rightLimit: 30
+  m_leftLimit: -20
+  m_rightLimit: 20
   m_generationOffset: 25
   m_startInterval: 50
   m_endInterval: 100
   m_prefabs:
   - {fileID: 116498, guid: d7d688a3d8e546b4ea1682512b78e068, type: 2}
+  - {fileID: 136440, guid: 2c17568bb791f5e4c8883d314ea059b4, type: 2}
   m_begin: .100000001
-  m_end: .5
+  m_end: .800000012
   m_interval: 10
   m_verticalSpeedFactor: 0
   m_direction: 1

@@ -17,6 +17,8 @@ public class BackgoundLayer : MonoBehaviour {
 	void Start () 
     {
         var go = (GameObject)Instantiate(m_prefab, transform.position, Quaternion.identity);
+        if (m_direction < 0)
+            go.renderer.material = m_skyColours[0];
         float maxY = float.MinValue;
         float minY = float.MaxValue;
         for (int i = 0; i < go.GetComponent<MeshFilter>().mesh.vertexCount; i++)
