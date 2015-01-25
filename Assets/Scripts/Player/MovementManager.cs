@@ -49,7 +49,6 @@ public class MovementManager : MonoBehaviour {
         StartCoroutine("waitForJump");
 	}
 
-
 	void OnTriggerEnter(Collider other) {
         //Debug.Log("Enter!!!");
 		if (other.CompareTag ("Booster")) {
@@ -185,8 +184,4 @@ public class MovementManager : MonoBehaviour {
 		return movementSpeed * Time.smoothDeltaTime;
 
     }
-
-	void OnGUI() {
-        GUI.Label(new Rect( 450,5, 30,30),"" + movementSpeed);
-	}
 }
