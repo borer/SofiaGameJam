@@ -29,7 +29,7 @@ public class CameraFollow : MonoBehaviour {
 
         var pos = transform.position;
         var playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
-        transform.position = new Vector3(pos.x, playerPos.y, pos.z);
+        transform.position = new Vector3(pos.x, playerPos.y + 1.1f, pos.z);
 
         var ast = GameObject.FindGameObjectWithTag("Asteroid");
         if (ast.transform.position.y - transform.position.y < MIN_DISTANCE_FACTOR * ast.transform.position.y)

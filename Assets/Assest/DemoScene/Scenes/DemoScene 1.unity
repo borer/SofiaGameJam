@@ -956,6 +956,7 @@ MonoBehaviour:
   fuckerParticlePrefab: {fileID: 400004, guid: e463141fb849fa84eba84b8688640df4, type: 2}
   boosterParticlePrefab: {fileID: 400000, guid: 7b74eeb989aff1040b23ae061a33b7bc,
     type: 2}
+  m_direction: 1
 --- !u!1 &210740183
 GameObject:
   m_ObjectHideFlags: 0
@@ -6543,6 +6544,7 @@ MonoBehaviour:
   m_end: 1.20000005
   m_interval: 10
   m_verticalSpeedFactor: .899999976
+  m_direction: 1
 --- !u!114 &1706508508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6571,6 +6573,7 @@ MonoBehaviour:
   m_end: 1.20000005
   m_interval: 10
   m_verticalSpeedFactor: .899999976
+  m_direction: 1
 --- !u!4 &1706508509
 Transform:
   m_ObjectHideFlags: 0
@@ -6820,6 +6823,7 @@ MonoBehaviour:
   m_end: 1
   m_interval: 10
   m_verticalSpeedFactor: .899999976
+  m_direction: 1
 --- !u!114 &1768640810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6850,6 +6854,7 @@ MonoBehaviour:
   m_end: .600000024
   m_interval: 10
   m_verticalSpeedFactor: 0
+  m_direction: 1
 --- !u!114 &1768640811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6873,6 +6878,7 @@ MonoBehaviour:
   m_heights:
   - .400000006
   - .800000012
+  m_direction: 1
 --- !u!4 &1768640812
 Transform:
   m_ObjectHideFlags: 0
@@ -6908,6 +6914,7 @@ MonoBehaviour:
   m_end: .5
   m_interval: 10
   m_verticalSpeedFactor: 0
+  m_direction: 1
 --- !u!114 &1768640814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6938,6 +6945,7 @@ MonoBehaviour:
   m_end: 1
   m_interval: 1
   m_verticalSpeedFactor: 0
+  m_direction: 1
 --- !u!114 &1768640815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6960,6 +6968,7 @@ MonoBehaviour:
   m_end: 1
   m_interval: 10
   m_verticalSpeedFactor: .899999976
+  m_direction: 1
 --- !u!1 &1784068109
 GameObject:
   m_ObjectHideFlags: 0

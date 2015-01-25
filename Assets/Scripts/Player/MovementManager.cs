@@ -34,6 +34,7 @@ public class MovementManager : MonoBehaviour {
     private float maximumSpeed = 0;
     private int count;
     private bool isJumpPerformed;
+    public int m_direction = 1;
 
 	void Start() {        
         cameraAnimController = Camera.main.GetComponent<CameraAnimationController> ();
@@ -114,11 +115,11 @@ public class MovementManager : MonoBehaviour {
 
         float movementBonus = 0;// Mathf.Sign(horizontalOffset) * Mathf.Abs(verticalOffset) * 0.1f;
 		horizontalOffset = moving ? horizontalOffset + movementBonus : horizontalOffset;
-		transform.Translate (new Vector3 (horizontalOffset, verticalOffset, 0), Space.World);
+        transform.Translate(new Vector3(horizontalOffset, m_direction * verticalOffset, 0), Space.World);
 
 
         maximumSpeed = Mathf.Max(maximumSpeed, Speed);
-        Debug.Log(maximumSpeed);
+    
 	}
 
 	private void getInput() {
